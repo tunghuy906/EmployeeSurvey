@@ -3,8 +3,148 @@
   "WorkspaceRootPath": "C:\\C#_ToTrain\\EmployeeSurvey\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\views\\adminaccounts\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\views\\adminaccounts\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\views\\adminaccounts\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\views\\adminaccounts\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\views\\adminaccounts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\views\\adminaccounts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\controllers\\adminaccountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\controllers\\adminaccountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\controllers\\admindepartmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\controllers\\admindepartmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\controllers\\adminquestionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\controllers\\adminquestionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\models\\questioncreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\models\\questioncreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\controllers\\adminquestionoptionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\controllers\\adminquestionoptionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\views\\adminquestions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\views\\adminquestions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\models\\questionoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\models\\questionoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\views\\adminquestions\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\views\\adminquestions\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\views\\adminquestionoptions\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\views\\adminquestionoptions\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\models\\answer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\models\\answer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\views\\adminquestionoptions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\views\\adminquestionoptions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\views\\adminquestions\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\views\\adminquestions\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\views\\adminaccounts\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\views\\adminaccounts\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\views\\adminaccounts\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\views\\adminaccounts\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\models\\testattempt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\models\\testattempt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\views\\admindepartments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\views\\admindepartments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\views\\home\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\views\\home\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\views\\home\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -13,38 +153,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\views\\home\\forgotpasswordconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\views\\home\\forgotpasswordconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\views\\home\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\views\\home\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\views\\users\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\views\\users\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,33 +166,356 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ResetPassword.cshtml",
-              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\ResetPassword.cshtml",
-              "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Home\\ResetPassword.cshtml",
-              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\ResetPassword.cshtml",
-              "RelativeToolTip": "EmployeeSurvey\\Views\\Home\\ResetPassword.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-21T03:10:01.854Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ForgotPasswordConfirmation.cshtml",
-              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\ForgotPasswordConfirmation.cshtml",
-              "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Home\\ForgotPasswordConfirmation.cshtml",
-              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\ForgotPasswordConfirmation.cshtml",
-              "RelativeToolTip": "EmployeeSurvey\\Views\\Home\\ForgotPasswordConfirmation.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-21T03:09:42.147Z",
-              "EditorCaption": ""
+              "DocumentIndex": 5,
+              "Title": "AdminQuestionsController.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminQuestionsController.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminQuestionsController.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminQuestionsController.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminQuestionsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T07:15:17.099Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "AdminAccountsController.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAccountsController.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAccountsController.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAccountsController.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAccountsController.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAAwJEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T02:43:50.177Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdminDepartmentsController.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminDepartmentsController.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminDepartmentsController.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminDepartmentsController.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminDepartmentsController.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAAwKEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T07:00:49.564Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Index.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Index.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Index.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Index.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAQwEMAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T03:54:46.291Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Edit.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Edit.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Edit.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T03:54:42.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Create.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Create.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Create.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Create.cshtml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAiwD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T03:54:01.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AdminQuestionOptionsController.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminQuestionOptionsController.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminQuestionOptionsController.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminQuestionOptionsController.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminQuestionOptionsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T09:25:56.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Index.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Index.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Index.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Index.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACUAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T07:29:00.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "QuestionOption.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\QuestionOption.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\QuestionOption.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\QuestionOption.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Models\\QuestionOption.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T07:14:20.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Question.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\Question.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\Question.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\Question.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Models\\Question.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T07:14:19.376Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "QuestionCreateViewModel.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\QuestionCreateViewModel.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\QuestionCreateViewModel.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\QuestionCreateViewModel.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Models\\QuestionCreateViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-23T10:17:56.516Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAiwKsAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T03:36:44.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Create.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Create.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Create.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Create.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T10:01:32.808Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Answer.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\Answer.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\Answer.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\Answer.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Models\\Answer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T07:21:15.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\AppDbContext.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\AppDbContext.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Models\\AppDbContext.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T09:56:28.754Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestionOptions\\Index.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestionOptions\\Index.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestionOptions\\Index.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestionOptions\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T09:46:30.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestionOptions\\Create.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestionOptions\\Create.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestionOptions\\Create.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestionOptions\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T10:12:12.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T03:44:14.584Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Delete.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Delete.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Delete.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Delete.cshtml",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCkAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T09:33:49.786Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Delete.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Delete.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Delete.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Delete.cshtml",
+              "ViewState": "AgIAACYAAAAAAAAAAAAQwDwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T03:54:32.45Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Details.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Details.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Details.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Details.cshtml",
+              "ViewState": "AgIAACUAAAAAAAAAAAAQwDsAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T03:54:38.928Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T03:16:36.909Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\User.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\User.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\User.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Models\\User.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T02:11:49.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "TestAttempt.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\TestAttempt.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\TestAttempt.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\TestAttempt.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Models\\TestAttempt.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAUwCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T03:41:27.94Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Role.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\Role.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\Role.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\Role.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Models\\Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T03:39:06.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Department.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\Department.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\Department.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\Department.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Models\\Department.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T06:59:18.287Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminDepartments\\Index.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminDepartments\\Index.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminDepartments\\Index.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminDepartments\\Index.cshtml",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwDMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T07:08:07.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\_ViewStart.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\_ViewStart.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T02:42:43.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T03:16:14.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
               "Title": "ForgotPassword.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\ForgotPassword.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Home\\ForgotPassword.cshtml",
@@ -92,108 +523,103 @@
               "RelativeToolTip": "EmployeeSurvey\\Views\\Home\\ForgotPassword.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-21T03:09:23.585Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-21T03:09:23.585Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Users\\Create.cshtml",
-              "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Users\\Create.cshtml",
-              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Users\\Create.cshtml",
-              "RelativeToolTip": "EmployeeSurvey\\Views\\Users\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-21T02:09:04.913Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "EmployeeSurvey\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "EmployeeSurvey\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAQwH0AAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T10:23:13.933Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "EmployeeSurvey\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "EmployeeSurvey\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T09:56:46.906Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Users\\Index.cshtml",
-              "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Users\\Index.cshtml",
-              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Users\\Index.cshtml",
-              "RelativeToolTip": "EmployeeSurvey\\Views\\Users\\Index.cshtml",
+              "DocumentIndex": 31,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Views\\_ViewStart.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-21T02:09:10.901Z"
+              "WhenOpened": "2025-08-22T03:44:07.632Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\User.cs",
-              "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\User.cs",
-              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\User.cs",
-              "RelativeToolTip": "EmployeeSurvey\\Models\\User.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAowDQAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-21T02:11:49.245Z",
-              "EditorCaption": ""
+              "DocumentIndex": 29,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\_ViewImports.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\_ViewImports.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T03:41:47.658Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 30,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Program.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Program.cs",
               "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Program.cs",
               "RelativeToolTip": "EmployeeSurvey\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABgAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-20T10:05:33.013Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 32,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAA4wDEAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T09:56:46.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\Login.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Home\\Login.cshtml",
               "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\Login.cshtml",
               "RelativeToolTip": "EmployeeSurvey\\Views\\Home\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAF0AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-20T10:05:15.032Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-20T10:05:15.032Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\AppDbContext.cs",
-              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\AppDbContext.cs",
-              "RelativeToolTip": "EmployeeSurvey\\Models\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T09:56:28.754Z"
+              "DocumentIndex": 34,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T09:58:20.065Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ForgotPasswordConfirmation.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\ForgotPasswordConfirmation.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Home\\ForgotPasswordConfirmation.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\ForgotPasswordConfirmation.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Views\\Home\\ForgotPasswordConfirmation.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T03:09:42.147Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "ResetPassword.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\ResetPassword.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Home\\ResetPassword.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\ResetPassword.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Views\\Home\\ResetPassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T03:10:01.854Z"
             }
           ]
         }

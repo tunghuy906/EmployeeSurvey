@@ -1,0 +1,73 @@
+﻿@model EmployeeSurvey.Models.QuestionCreateViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Question</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Content" class="control-label"></label>
+                <input asp-for="Content" class="form-control" />
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="QuestionType" class="control-label"></label>
+                <input asp-for="QuestionType" class="form-control" />
+                <span asp-validation-for="QuestionType" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SkillID" class="control-label"></label>
+                <select asp-for="SkillID" class="form-control" asp-items="ViewBag.SkillId"></select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DifficultyID" class="control-label"></label>
+                <select asp-for="DifficultyID" class="form-control" asp-items="ViewBag.DifficultyId"></select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CreatedBy" class="control-label"></label>
+                <select asp-for="CreatedBy" class="form-control" asp-items="ViewBag.CreatedBy"></select>
+            </div>
+
+            <h5>Options</h5>
+            <div id="options">
+                @for (int i = 0; i < Model.Options.Count; i++)
+                {
+                    <div class="form-group">
+                        <label>Option @(i + 1)</label>
+                        <input asp-for="Options[@i].Content" class="form-control" />
+                        <div class="form-check">
+                            <input asp-for="Options[@i].IsCorrect" class="form-check-input" />
+                            <label class="form-check-label">Correct</label>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="form-group mt-3">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

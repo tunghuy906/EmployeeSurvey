@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml"; // dùng layout admin template
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <h1 class="mb-4">Xin chào, @ViewBag.FullName 👋</h1>
+        <p>Chào mừng bạn đến với trang quản trị.</p>
+
+        <!-- Nếu bạn muốn test hiển thị -->
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>150</h3>
+                        <p>Người dùng</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

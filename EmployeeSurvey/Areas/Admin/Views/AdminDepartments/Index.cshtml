@@ -1,0 +1,51 @@
+﻿@model IEnumerable<EmployeeSurvey.Models.Department>
+
+@{
+    ViewData["Title"] = "Danh sách phòng ban";
+}
+
+<h1>Danh sách phòng ban</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Thêm phòng ban</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>DeptName</th>
+            <th>Description</th>
+            <th>Nhân viên (tối đa 2)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var dept in Model)
+        {
+            <tr>
+                <td>@dept.DeptName</td>
+                <td>@dept.Description</td>
+                <td>
+                    @if (dept.Users != null && dept.Users.Any())
+                    {
+                        var employees = dept.Users.Take(2);
+                        <!-- chỉ lấy 2 nhân viên -->
+                        foreach (var emp in employees)
+                        {
+                            <div>- @emp.FullName</div>
+                        }
+                    }
+                    else
+                    {
+                        <span><i>Chưa có nhân viên</i></span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@dept.DeptId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@dept.DeptId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@dept.DeptId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

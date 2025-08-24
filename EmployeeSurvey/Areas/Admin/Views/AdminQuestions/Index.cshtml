@@ -1,0 +1,43 @@
+﻿@model IEnumerable<EmployeeSurvey.Models.Question>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Danh sách câu hỏi</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Tạo câu hỏi mới</a>
+</p>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Content)</th>
+            <th>@Html.DisplayNameFor(model => model.QuestionType)</th>
+            <th>@Html.DisplayNameFor(model => model.CreatedDate)</th>
+            <th>@Html.DisplayNameFor(model => model.CreatedByNavigation)</th>
+            <th>@Html.DisplayNameFor(model => model.Difficulty)</th>
+            <th>@Html.DisplayNameFor(model => model.Skill)</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Content)</td>
+                <td>@Html.DisplayFor(modelItem => item.QuestionType)</td>
+                <td>@Html.DisplayFor(modelItem => item.CreatedDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.CreatedByNavigation.UserId)</td>
+                <td>@Html.DisplayFor(modelItem => item.Difficulty.DifficultyId)</td>
+                <td>@Html.DisplayFor(modelItem => item.Skill.SkillId)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.QuestionId" class="btn btn-warning btn-sm">Sửa</a> |
+                    <a asp-action="Details" asp-route-id="@item.QuestionId" class="btn btn-info btn-sm">Chi tiết</a> |
+                    <a asp-action="Delete" asp-route-id="@item.QuestionId" class="btn btn-danger btn-sm">Xóa</a> |
+                    <a asp-controller="AdminQuestionOptions" asp-action="Index" asp-route-questionId="@item.QuestionId" class="btn btn-success btn-sm">Câu trả lời</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

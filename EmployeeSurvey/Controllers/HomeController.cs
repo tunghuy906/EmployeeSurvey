@@ -41,8 +41,21 @@ public class HomeController : Controller
 			HttpContext.Session.SetString("FullName", user.FullName ?? "");
 			HttpContext.Session.SetString("Role", user.Role?.RoleName ?? "");
 
-			return RedirectToAction("Index", "Users");
+			// 👉 Kiểm tra phân quyền
+			if (user.Role?.RoleName == "Admin" ||
+				user.Role?.RoleName == "HR" ||
+				user.Role?.RoleName == "Manager")
+			{
+				// Vào trang Admin (ví dụ: /Admin/Dashboard)
+				return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
+			}
+			else
+			{
+				// Nhân viên bình thường vào Home
+				return RedirectToAction("Index", "Home");
+			}
 		}
+
 
 		ViewBag.Error = "Sai email hoặc mật khẩu.";
 		return View();
@@ -119,14 +132,21 @@ public class HomeController : Controller
 			return BadRequest("Token không hợp lệ hoặc đã hết hạn.");
 		}
 
-		// TODO: Hash mật khẩu thay vì lưu plain text
+		if (string.IsNullOrWhiteSpace(newPassword))
+		{
+			return BadRequest("Mật khẩu mới không được để trống.");
+		}
+
+		// 👉 Lưu trực tiếp mật khẩu mới vào DB
 		user.PasswordHash = newPassword;
+
+		// Reset lại token để không dùng lại được
 		user.ResetToken = null;
 		user.ResetTokenExpiry = null;
 
 		await _context.SaveChangesAsync();
 
-		ViewBag.Message = "Đổi mật khẩu thành công. Mời bạn đăng nhập.";
+		TempData["Success"] = "Đổi mật khẩu thành công. Mời bạn đăng nhập.";
 		return RedirectToAction("Login");
 	}
 }
