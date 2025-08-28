@@ -16,10 +16,10 @@ namespace EmployeeSurvey.Models
 		[Required(ErrorMessage = "Loại câu hỏi không được để trống")]
 		public string QuestionType { get; set; } // VD: MCQ, Essay, True/False
 
-		public int? SkillID { get; set; }
-		public int? DifficultyID { get; set; }
+		public int SkillID { get; set; }
+		public int DifficultyID { get; set; }
 
-		public int? CreatedBy { get; set; }
+		public int CreatedBy { get; set; }
 		public DateTime CreatedDate { get; set; } = DateTime.Now;
 
 		// Danh sách phương án trả lời (Options)

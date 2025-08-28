@@ -25,3 +25,4 @@ public partial class Department
     [InverseProperty("Depts")]
     public virtual ICollection<User> Users { get; set; } = new List<User>();
 }
+

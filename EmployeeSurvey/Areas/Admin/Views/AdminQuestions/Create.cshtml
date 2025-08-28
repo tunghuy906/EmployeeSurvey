@@ -21,38 +21,43 @@
 
             <div class="form-group">
                 <label asp-for="QuestionType" class="control-label"></label>
-                <input asp-for="QuestionType" class="form-control" />
+                <select asp-for="QuestionType" class="form-control" id="QuestionType">
+                    <option value="MCQ">MCQ</option>
+                    <option value="TrueFalse">True/False</option>
+                    <option value="MultipleResponse">Multiple Response</option>
+                    <option value="TextInput">Text Input</option>
+                </select>
                 <span asp-validation-for="QuestionType" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="SkillID" class="control-label"></label>
-                <select asp-for="SkillID" class="form-control" asp-items="ViewBag.SkillId"></select>
+                <select asp-for="SkillID" class="form-control" asp-items="ViewBag.SkillId">
+                    <option value="">-- Select Skill --</option>
+                </select>
             </div>
 
             <div class="form-group">
                 <label asp-for="DifficultyID" class="control-label"></label>
-                <select asp-for="DifficultyID" class="form-control" asp-items="ViewBag.DifficultyId"></select>
+                <select asp-for="DifficultyID" class="form-control" asp-items="ViewBag.DifficultyId">
+                    <option value="">-- Select Difficulty --</option>
+                </select>
             </div>
 
             <div class="form-group">
                 <label asp-for="CreatedBy" class="control-label"></label>
-                <select asp-for="CreatedBy" class="form-control" asp-items="ViewBag.CreatedBy"></select>
+                <select asp-for="CreatedBy" class="form-control" asp-items="ViewBag.CreatedBy">
+                    <option value="">-- Select User --</option>
+                </select>
             </div>
 
+
             <h5>Options</h5>
-            <div id="options">
-                @for (int i = 0; i < Model.Options.Count; i++)
-                {
-                    <div class="form-group">
-                        <label>Option @(i + 1)</label>
-                        <input asp-for="Options[@i].Content" class="form-control" />
-                        <div class="form-check">
-                            <input asp-for="Options[@i].IsCorrect" class="form-check-input" />
-                            <label class="form-check-label">Correct</label>
-                        </div>
-                    </div>
-                }
+            <div id="options-container"></div>
+
+            <div id="text-answer-section" style="display:none;">
+                <label>Correct Answer</label>
+                <input type="text" name="CorrectTextAnswer" class="form-control" />
             </div>
 
             <div class="form-group mt-3">
@@ -67,7 +72,65 @@
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script>
+        function renderOptions(type) {
+            let container = document.getElementById("options-container");
+            let textAnswer = document.getElementById("text-answer-section");
+            container.innerHTML = "";
+            textAnswer.style.display = "none";
+
+            if (type === "MCQ") {
+                for (let i = 0; i < 4; i++) {
+                    container.innerHTML += `
+                        <div class="form-group">
+                            <label>Option ${i+1}</label>
+                            <input type="text" name="Options[${i}].Content" class="form-control" />
+                            <div class="form-check">
+                                <input type="radio" name="CorrectOptionIndex" value="${i}" class="form-check-input" />
+                                <label class="form-check-label">Correct</label>
+                            </div>
+                        </div>`;
+                }
+            }
+                    else if (type === "TrueFalse") {
+                        container.innerHTML += `
+                         <div class="form-check">
+                    <input type="radio" name="CorrectOptionIndex" value="0" class="form-check-input" />
+                    <label class="form-check-label">True</label>
+                    <input type="hidden" name="Options[0].Content" value="True" />
+                        </div>
+                          <div class="form-check">
+                    <input type="radio" name="CorrectOptionIndex" value="1" class="form-check-input" />
+                    <label class="form-check-label">False</label>
+                    <input type="hidden" name="Options[1].Content" value="False" />
+                </div>`;
+        }
+
+            else if (type === "MultipleResponse") {
+                for (let i = 0; i < 4; i++) {
+                    container.innerHTML += `
+                        <div class="form-group">
+                            <label>Option ${i+1}</label>
+                            <input type="text" name="Options[${i}].Content" class="form-control" />
+                            <div class="form-check">
+                                <input type="checkbox" name="Options[${i}].IsCorrect" value="true" class="form-check-input" />
+                                <label class="form-check-label">Correct</label>
+                            </div>
+                        </div>`;
+                }
+            }
+            else if (type === "TextInput") {
+                textAnswer.style.display = "block";
+            }
+        }
+
+        document.getElementById("QuestionType").addEventListener("change", function () {
+            renderOptions(this.value);
+        });
+
+        // render lần đầu khi load
+        renderOptions(document.getElementById("QuestionType").value);
+    </script>
 }

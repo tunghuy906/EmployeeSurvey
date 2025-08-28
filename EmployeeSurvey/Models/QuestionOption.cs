@@ -24,6 +24,6 @@ namespace EmployeeSurvey.Models
 
 		[ForeignKey("QuestionId")]
 		[InverseProperty("QuestionOptions")]
-		public virtual Question Question { get; set; } = null!;
+		public virtual Question? Question { get; set; } = null!;
 	}
 }

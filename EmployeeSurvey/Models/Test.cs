@@ -20,7 +20,9 @@ public partial class Test
 
     public int Duration { get; set; }
 
-    [Column(TypeName = "decimal(5, 2)")]
+	public int? RandomQuestionCount { get; set; }
+
+	[Column(TypeName = "decimal(5, 2)")]
     public decimal PassScore { get; set; }
 
     public int CreatedBy { get; set; }
@@ -33,7 +35,7 @@ public partial class Test
 
     [ForeignKey("CreatedBy")]
     [InverseProperty("Tests")]
-    public virtual User CreatedByNavigation { get; set; } = null!;
+    public virtual User? CreatedByNavigation { get; set; } = null!;
 
     [InverseProperty("Test")]
     public virtual ICollection<Feedback> Feedbacks { get; set; } = new List<Feedback>();

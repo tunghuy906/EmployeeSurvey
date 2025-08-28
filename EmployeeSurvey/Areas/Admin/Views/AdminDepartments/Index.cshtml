@@ -15,8 +15,8 @@
         <tr>
             <th>DeptName</th>
             <th>Description</th>
-            <th>Nhân viên (tối đa 2)</th>
-            <th></th>
+            <th>Nhân viên</th>
+            <th>Thao tác</th>
         </tr>
     </thead>
     <tbody>
@@ -28,12 +28,7 @@
                 <td>
                     @if (dept.Users != null && dept.Users.Any())
                     {
-                        var employees = dept.Users.Take(2);
-                        <!-- chỉ lấy 2 nhân viên -->
-                        foreach (var emp in employees)
-                        {
-                            <div>- @emp.FullName</div>
-                        }
+                        <span>@dept.Users.Count() nhân viên</span>
                     }
                     else
                     {
@@ -41,9 +36,14 @@
                     }
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@dept.DeptId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@dept.DeptId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@dept.DeptId">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@dept.DeptId" class="btn btn-sm btn-warning">Sửa phòng/ban</a>
+                    <a asp-action="Details" asp-route-id="@dept.DeptId" class="btn btn-sm btn-info">Xem phòng/ban</a>
+                    <a asp-action="Delete" asp-route-id="@dept.DeptId" class="btn btn-sm btn-danger">Xóa phòng/ban</a>
+
+                    <!-- Nút thêm nhân viên -->
+                    <a asp-controller="AdminDepartments" asp-action="AssignToDepartment" asp-route-deptId="@dept.DeptId" class="btn btn-sm btn-success">
+                        + Thêm nhân viên
+                    </a>
                 </td>
             </tr>
         }

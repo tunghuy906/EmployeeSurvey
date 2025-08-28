@@ -1,26 +1,105 @@
 ﻿@{
     ViewData["Title"] = "Admin Dashboard";
-    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml"; // dùng layout admin template
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <section class="content">
     <div class="container-fluid">
-        <h1 class="mb-4">Xin chào, @ViewBag.FullName 👋</h1>
-        <p>Chào mừng bạn đến với trang quản trị.</p>
+        <!-- Tiêu đề -->
+        <div class="mb-4">
+            <h1 class="fw-bold text-success">Xin chào, @ViewBag.FullName 👋</h1>
+            <p class="text-muted">Chào mừng bạn đến với hệ thống quản trị.</p>
+        </div>
 
-        <!-- Nếu bạn muốn test hiển thị -->
-        <div class="row">
-            <div class="col-lg-3 col-6">
-                <div class="small-box bg-info">
-                    <div class="inner">
-                        <h3>150</h3>
-                        <p>Người dùng</p>
+        <!-- Các ô thống kê -->
+        <div class="row g-4 mb-5">
+            <div class="col-lg-3 col-sm-6">
+                <div class="card shadow-sm border-0 rounded-4 h-100 text-center p-3">
+                    <div class="text-primary mb-2">
+                        <i class="fas fa-users fa-2x"></i>
                     </div>
-                    <div class="icon">
-                        <i class="fas fa-users"></i>
+                    <h2 class="fw-bold text-primary">@ViewBag.TotalUsers</h2>
+                    <p class="text-muted">Người dùng</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card shadow-sm border-0 rounded-4 h-100 text-center p-3">
+                    <div class="text-success mb-2">
+                        <i class="fas fa-file-alt fa-2x"></i>
+                    </div>
+                    <h2 class="fw-bold text-success">@ViewBag.TotalTests</h2>
+                    <p class="text-muted">Bài test</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card shadow-sm border-0 rounded-4 h-100 text-center p-3">
+                    <div class="text-warning mb-2">
+                        <i class="fas fa-chart-line fa-2x"></i>
+                    </div>
+                    <h2 class="fw-bold text-warning">@ViewBag.TotalFeedbacks</h2>
+                    <p class="text-muted">Báo cáo</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card shadow-sm border-0 rounded-4 h-100 text-center p-3">
+                    <div class="text-danger mb-2">
+                        <i class="fas fa-user-shield fa-2x"></i>
+                    </div>
+                    <h2 class="fw-bold text-danger">@ViewBag.TotalAdmins</h2>
+                    <p class="text-muted">Admin</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Biểu đồ và thông báo -->
+        <div class="row mt-5">
+            <div class="col-lg-8">
+                <div class="card shadow-sm border-0 rounded-4">
+                    <div class="card-header bg-white fw-bold">
+                        Biểu đồ hoạt động
+                    </div>
+                    <div class="card-body">
+                        <canvas id="activityChart" height="150"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card shadow-sm border-0 rounded-4">
+                    <div class="card-header bg-white fw-bold">
+                        Thông báo
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-0">
+                            <li>📢 Có 3 user mới đăng ký hôm nay</li>
+                            <li>⚡ Hệ thống backup thành công</li>
+                            <li>✅ Server đang hoạt động ổn định</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
+
+@section Scripts {
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('activityChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Thứ 2','Thứ 3','Thứ 4','Thứ 5','Thứ 6','Thứ 7','CN'],
+                datasets: [{
+                    label: 'Người dùng mới',
+                    data: [5, 8, 6, 10, 12, 7, 9],
+                    borderColor: '#0b8457',
+                    backgroundColor: 'rgba(11,132,87,0.2)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            }
+        });
+    </script>
+}

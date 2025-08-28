@@ -1,0 +1,118 @@
+﻿@model EmployeeSurvey.Models.Test
+
+@{
+    ViewData["Title"] = "Làm bài test";
+    // Nếu bạn có Duration trong Model (tính bằng giây), dùng cái này
+    var totalSeconds = Model.Duration > 0 ? Model.Duration : (ViewBag.Duration ?? 600);
+}
+
+<div class="container mt-4">
+    <h2 class="mb-3 text-success">📝 @Model.Title</h2>
+    <p>@Model.Description</p>
+
+    <!-- Vùng hiển thị thời gian -->
+    <div class="alert alert-warning">
+        ⏳ Thời gian còn lại: <span id="timer"></span>
+    </div>
+
+    <form asp-action="Submit" method="post" id="testForm">
+        <input type="hidden" name="testId" value="@Model.TestId" />
+        <!-- Hidden để gửi thời gian làm bài -->
+        <input type="hidden" name="timeSpent" id="timeSpent" value="0" />
+
+        @{
+            int i = 0;
+        }
+
+        @foreach (var tq in Model.TestQuestions ?? Enumerable.Empty<EmployeeSurvey.Models.TestQuestion>())
+        {
+            var q = tq.Question;
+            <div class="mb-4 p-3 border rounded bg-light">
+                <h5>Câu @(i + 1): @q?.Content</h5>
+
+                @switch (q?.QuestionType)
+                {
+                    case "MCQ":
+                        if (q.QuestionOptions != null)
+                        {
+                            foreach (var opt in q.QuestionOptions)
+                            {
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio"
+                                           name="answers[@i].OptionId"
+                                           value="@opt.OptionId" />
+                                    <label class="form-check-label">@opt.Content</label>
+                                </div>
+                            }
+                        }
+                        break;
+
+                    case "TrueFalse":
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   name="answers[@i].AnswerText" value="True" />
+                            <label class="form-check-label">Đúng</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   name="answers[@i].AnswerText" value="False" />
+                            <label class="form-check-label">Sai</label>
+                        </div>
+                        break;
+
+                    case "MultipleResponse":
+                        if (q.QuestionOptions != null)
+                        {
+                            foreach (var opt in q.QuestionOptions)
+                            {
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                           name="answers[@i].SelectedOptionIds"
+                                           value="@opt.OptionId" />
+                                    <label class="form-check-label">@opt.Content</label>
+                                </div>
+                            }
+                        }
+                        break;
+
+                    case "TextInput":
+                        <textarea class="form-control" name="answers[@i].AnswerText" rows="3"></textarea>
+                        break;
+                }
+
+                <input type="hidden" name="answers[@i].QuestionId" value="@q?.QuestionId" />
+            </div>
+
+            i++;
+        }
+
+        <button type="submit" class="btn btn-primary">Nộp bài</button>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        let totalSeconds = @totalSeconds;
+        let timeLeft = totalSeconds;
+        let timerElement = document.getElementById("timer");
+        let timeSpentInput = document.getElementById("timeSpent");
+        let form = document.getElementById("testForm");
+
+        function updateTimer() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            timerElement.textContent = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                alert("Hết giờ! Bài sẽ được nộp.");
+                form.submit(); // auto submit khi hết giờ
+            }
+            timeLeft--;
+            timeSpentInput.value = totalSeconds - timeLeft; // lưu số giây đã làm
+        }
+
+        let timer = setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+}

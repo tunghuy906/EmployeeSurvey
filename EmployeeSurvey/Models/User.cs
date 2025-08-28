@@ -48,11 +48,11 @@ public partial class User
     [InverseProperty("CreatedByNavigation")]
     public virtual ICollection<Question> Questions { get; set; } = new List<Question>();
 
-	[ForeignKey("RoleId")]
-	[InverseProperty("Users")]
-	public virtual Role? Role { get; set; }
+    [ForeignKey("RoleId")]
+    [InverseProperty("Users")]
+    public virtual Role? Role { get; set; }
 
-	[InverseProperty("User")]
+    [InverseProperty("User")]
     public virtual ICollection<TestAttempt> TestAttempts { get; set; } = new List<TestAttempt>();
 
     [InverseProperty("CreatedByNavigation")]

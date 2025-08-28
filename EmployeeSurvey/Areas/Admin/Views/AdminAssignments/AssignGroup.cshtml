@@ -1,0 +1,50 @@
+﻿@model EmployeeSurvey.Models.AssignGroupViewModel
+@{
+    ViewData["Title"] = "Phân công bài test";
+}
+
+<h2 class="mb-4 text-success">Phân công bài test</h2>
+
+<form asp-action="AssignGroup" method="post">
+    <div class="mb-3">
+        <label class="form-label fw-bold">Bài test</label>
+        <select asp-for="TestId" class="form-select" asp-items="ViewBag.TestID"></select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label fw-bold">Chức vụ (Role)</label>
+        <select asp-for="RoleId" class="form-select" asp-items="ViewBag.RoleID">
+            <option value="">-- Tất cả --</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label fw-bold">Phòng ban</label>
+        <select asp-for="DepartmentId" class="form-select" asp-items="ViewBag.DeptID">
+            <option value="">-- Tất cả --</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label fw-bold">Trình độ (Level)</label>
+        <select name="Level" class="form-select">
+            <option value="">-- Tất cả --</option>
+            @foreach (var level in ViewBag.Levels as List<string>)
+            {
+                <option value="@level">@level</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label fw-bold">Hạn nộp</label>
+        <input asp-for="Deadline" type="date" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Phân công</button>
+</form>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-info mt-3">@TempData["Message"]</div>
+}

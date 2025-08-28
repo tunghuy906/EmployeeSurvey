@@ -43,13 +43,15 @@ public partial class AppDbContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
+	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=localhost;Database=EmployeeSurveyDB;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Answer>(entity =>
+
+		modelBuilder.Entity<Answer>(entity =>
         {
             entity.HasKey(e => e.AnswerId).HasName("PK__Answers__D4825024BE25D82B");
 
@@ -218,8 +220,28 @@ public partial class AppDbContext : DbContext
                         j.IndexerProperty<int>("DeptId").HasColumnName("DeptID");
                     });
         });
+		modelBuilder.Entity<User>()
+		  .HasMany(u => u.Depts)
+		  .WithMany(d => d.Users)
+		  .UsingEntity<Dictionary<string, object>>(
+			  "UserDepartment", // Tên bảng trung gian
+			  j => j.HasOne<Department>()
+					.WithMany()
+					.HasForeignKey("DeptId")
+					.HasConstraintName("FK_UserDepartment_Department")
+					.OnDelete(DeleteBehavior.Cascade),
+			  j => j.HasOne<User>()
+					.WithMany()
+					.HasForeignKey("UserId")
+					.HasConstraintName("FK_UserDepartment_User")
+					.OnDelete(DeleteBehavior.Cascade),
+			  j =>
+			  {
+				  j.HasKey("UserId", "DeptId");
+				  j.ToTable("User_Department"); // Tên bảng trung gian trong DB
+			  });
 
-        OnModelCreatingPartial(modelBuilder);
+		OnModelCreatingPartial(modelBuilder);
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

@@ -1,0 +1,46 @@
+﻿@model EmployeeSurvey.Models.Test
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details Test</h1>
+
+<div>
+    <h4>Test</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Title</dt>
+        <dd class="col-sm-10">@Model.Title</dd>
+
+        <dt class="col-sm-2">Description</dt>
+        <dd class="col-sm-10">@Model.Description</dd>
+
+        <dt class="col-sm-2">Duration</dt>
+        <dd class="col-sm-10">@Model.Duration</dd>
+
+        <dt class="col-sm-2">Pass Score</dt>
+        <dd class="col-sm-10">@Model.PassScore</dd>
+
+        <dt class="col-sm-2">Created Date</dt>
+        <dd class="col-sm-10">@Model.CreatedDate</dd>
+
+        <dt class="col-sm-2">Created By</dt>
+        <dd class="col-sm-10">@Model.CreatedByNavigation?.FullName</dd>
+    </dl>
+
+    <h5>Câu hỏi trong bài test:</h5>
+    <ul class="list-group">
+        @foreach (var tq in Model.TestQuestions.OrderBy(t => t.OrderNo))
+        {
+            <li class="list-group-item">
+                @tq.OrderNo. @tq.Question.Content
+            </li>
+        }
+    </ul>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.TestId" class="btn btn-primary">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

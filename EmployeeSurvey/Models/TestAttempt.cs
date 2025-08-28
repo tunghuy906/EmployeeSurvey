@@ -35,7 +35,7 @@ public partial class TestAttempt
 
     [ForeignKey("TestId")]
     [InverseProperty("TestAttempts")]
-    public virtual Test Test { get; set; } = null!;
+    public virtual Test? Test { get; set; } = null!;
 
     [ForeignKey("UserId")]
     [InverseProperty("TestAttempts")]

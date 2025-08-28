@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EmployeeSurvey.Models;
+using ClosedXML.Excel;
 
 namespace EmployeeSurvey.Areas.Admin.Controllers
 {
@@ -51,10 +52,14 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 		[HttpGet]
 		public IActionResult Create()
 		{
+			ViewData["CreatedBy"] = new SelectList(_context.Users, "UserId", "FullName");
+			ViewData["DifficultyId"] = new SelectList(_context.Difficulties, "DifficultyId", "LevelName");
+			ViewData["SkillId"] = new SelectList(_context.Skills, "SkillId", "SkillName");
+
 			return View(new QuestionCreateViewModel
 			{
-				Content = string.Empty,        // gán mặc định
-				QuestionType = string.Empty,   // gán mặc định
+				Content = string.Empty,
+				QuestionType = string.Empty,
 				Options = new List<QuestionOptionViewModel>
 		{
 			new QuestionOptionViewModel { Content = string.Empty, IsCorrect = false },
@@ -91,9 +96,15 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 				return RedirectToAction(nameof(Index));
 			}
 
-			// Nếu có lỗi validation thì quay lại view cùng model
+			// Nếu có lỗi validation thì bind lại SelectList với Text là Name
+			ViewData["CreatedBy"] = new SelectList(_context.Users, "UserId", "FullName", model.CreatedBy);
+			ViewData["DifficultyId"] = new SelectList(_context.Difficulties, "DifficultyId", "LevelName", model.DifficultyID);
+			ViewData["SkillId"] = new SelectList(_context.Skills, "SkillId", "SkillName", model.SkillID);
+
 			return View(model);
 		}
+
+
 
 		// GET: Admin/AdminQuestions/Edit/5
 		public async Task<IActionResult> Edit(int? id)
@@ -108,9 +119,9 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["CreatedBy"] = new SelectList(_context.Users, "UserId", "UserId", question.CreatedBy);
-            ViewData["DifficultyId"] = new SelectList(_context.Difficulties, "DifficultyId", "DifficultyId", question.DifficultyId);
-            ViewData["SkillId"] = new SelectList(_context.Skills, "SkillId", "SkillId", question.SkillId);
+            ViewData["CreatedBy"] = new SelectList(_context.Users, "UserId", "FullName", question.CreatedBy);
+            ViewData["DifficultyId"] = new SelectList(_context.Difficulties, "DifficultyId", "LevelName", question.DifficultyId);
+            ViewData["SkillId"] = new SelectList(_context.Skills, "SkillId", "SkillName", question.SkillId);
             return View(question);
         }
 
@@ -146,9 +157,9 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CreatedBy"] = new SelectList(_context.Users, "UserId", "UserId", question.CreatedBy);
-            ViewData["DifficultyId"] = new SelectList(_context.Difficulties, "DifficultyId", "DifficultyId", question.DifficultyId);
-            ViewData["SkillId"] = new SelectList(_context.Skills, "SkillId", "SkillId", question.SkillId);
+            ViewData["CreatedBy"] = new SelectList(_context.Users, "UserId", "FullName", question.CreatedBy);
+            ViewData["DifficultyId"] = new SelectList(_context.Difficulties, "DifficultyId", "LevelName", question.DifficultyId);
+            ViewData["SkillId"] = new SelectList(_context.Skills, "SkillId", "SkillName", question.SkillId);
             return View(question);
         }
 
@@ -173,24 +184,107 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
             return View(question);
         }
 
-        // POST: Admin/AdminQuestions/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var question = await _context.Questions.FindAsync(id);
-            if (question != null)
-            {
-                _context.Questions.Remove(question);
-            }
+		// POST: Admin/AdminQuestions/Delete/5
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> DeleteConfirmed(int id)
+		{
+			// Lấy question kèm các collection
+			var question = await _context.Questions
+				.Include(q => q.QuestionOptions)
+				.Include(q => q.Answers)
+				.Include(q => q.TestQuestions)
+				.FirstOrDefaultAsync(q => q.QuestionId == id);
 
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+			if (question != null)
+			{
+				// Xóa các bản ghi con trước
+				if (question.QuestionOptions.Any())
+					_context.QuestionOptions.RemoveRange(question.QuestionOptions);
 
-        private bool QuestionExists(int id)
+				if (question.Answers.Any())
+					_context.Answers.RemoveRange(question.Answers);
+
+				if (question.TestQuestions.Any())
+					_context.TestQuestions.RemoveRange(question.TestQuestions);
+
+				// Xóa question
+				_context.Questions.Remove(question);
+
+				await _context.SaveChangesAsync();
+			}
+
+			return RedirectToAction(nameof(Index));
+		}
+
+		private bool QuestionExists(int id)
         {
             return _context.Questions.Any(e => e.QuestionId == id);
         }
-    }
+		[HttpPost]
+		public async Task<IActionResult> ImportExcel(IFormFile file)
+		{
+			if (file == null || file.Length == 0)
+			{
+				ModelState.AddModelError("", "Please select an Excel file.");
+				return RedirectToAction(nameof(Index));
+			}
+
+			using (var stream = new MemoryStream())
+			{
+				await file.CopyToAsync(stream);
+				using (var workbook = new XLWorkbook(stream))
+				{
+					var worksheet = workbook.Worksheet(1); // sheet 1
+					var rows = worksheet.RangeUsed().RowsUsed().Skip(1); // bỏ row header
+
+					foreach (var row in rows)
+					{
+						var question = new Question
+						{
+							Content = row.Cell(1).GetString(),
+							QuestionType = row.Cell(2).GetString(),
+							SkillId = row.Cell(3).GetValue<int>(),
+							DifficultyId = row.Cell(4).GetValue<int>(),
+							CreatedBy = row.Cell(5).GetValue<int>(),
+							CreatedDate = DateTime.Now,
+							QuestionOptions = new List<QuestionOption>()
+						};
+
+						// Đọc CorrectOptionIndex (cột 10), có thể là "1" hoặc "1,2,3"
+						var correctIndexesStr = row.Cell(10).GetString();
+						var correctIndexes = new List<int>();
+						if (!string.IsNullOrWhiteSpace(correctIndexesStr))
+						{
+							correctIndexes = correctIndexesStr
+								.Split(',', StringSplitOptions.RemoveEmptyEntries)
+								.Select(x => int.Parse(x.Trim()))
+								.ToList();
+						}
+
+						// option nằm ở cột 6–9
+						for (int i = 6; i <= 9; i++)
+						{
+							if (!string.IsNullOrWhiteSpace(row.Cell(i).GetString()))
+							{
+								question.QuestionOptions.Add(new QuestionOption
+								{
+									Content = row.Cell(i).GetString(),
+									IsCorrect = correctIndexes.Contains(i - 5)
+								});
+							}
+						}
+
+						_context.Questions.Add(question);
+					}
+
+					await _context.SaveChangesAsync();
+				}
+			}
+
+			TempData["Message"] = "Import successfully!";
+			return RedirectToAction(nameof(Index));
+		}
+
+	}
 }

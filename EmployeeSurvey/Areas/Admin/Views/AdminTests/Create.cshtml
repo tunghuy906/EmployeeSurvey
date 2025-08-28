@@ -1,0 +1,77 @@
+﻿@model EmployeeSurvey.Models.Test
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Test</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Duration" class="control-label"></label>
+                <input asp-for="Duration" class="form-control" />
+                <span asp-validation-for="Duration" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PassScore" class="control-label"></label>
+                <input asp-for="PassScore" class="form-control" />
+                <span asp-validation-for="PassScore" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CreatedBy" class="control-label"></label>
+                <select asp-for="CreatedBy" class="form-control" asp-items="ViewBag.CreatedBy"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RandomQuestionCount" class="control-label">Số lượng câu hỏi ngẫu nhiên</label>
+                <input asp-for="RandomQuestionCount" class="form-control" type="number" min="0" />
+                <span asp-validation-for="RandomQuestionCount" class="text-danger"></span>
+            </div>
+
+            <!-- ✅ Thêm danh sách câu hỏi -->
+            <div class="form-group">
+                <label>Chọn câu hỏi cho bài test:</label>
+                <div class="border p-2" style="max-height:250px; overflow-y:auto;">
+                    @foreach (var q in (List<EmployeeSurvey.Models.Question>)ViewData["Questions"])
+                    {
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="selectedQuestions" value="@q.QuestionId" />
+                            <label class="form-check-label">@q.Content</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

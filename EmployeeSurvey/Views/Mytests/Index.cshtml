@@ -1,0 +1,51 @@
+﻿@model IEnumerable<EmployeeSurvey.Models.TestAttempt>
+
+@{
+    ViewData["Title"] = "Danh sách bài test của tôi";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-3 text-primary">📑 Bài test của tôi</h2>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">Bạn chưa có bài test nào được giao.</div>
+    }
+    else
+    {
+        <table class="table table-bordered table-hover">
+            <thead class="table-light">
+                <tr>
+                    <th>Tên bài test</th>
+                    <th>Trạng thái</th>
+                    <th>Ngày bắt đầu</th>
+                    <th>Ngày hoàn thành</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var attempt in Model)
+                {
+                    <tr>
+                        <td>@attempt.Test?.Title</td>
+                        <td>
+                            @(attempt.Status == "NotStarted" ? "Chưa làm" : attempt.Status)
+                        </td>
+                        <td>@(attempt.StartTime.HasValue ? attempt.StartTime.Value.ToString("dd/MM/yyyy HH:mm") : "-")</td>
+                        <td>@(attempt.EndTime.HasValue ? attempt.EndTime.Value.ToString("dd/MM/yyyy HH:mm") : "-")</td>
+                        <td>
+                            @if (attempt.Status == "NotStarted")
+                            {
+                                <a class="btn btn-sm btn-success" asp-action="Take" asp-route-id="@attempt.TestId">Làm bài</a>
+                            }
+                            else if (attempt.Status == "Submitted")
+                            {
+                                <a class="btn btn-sm btn-info" asp-action="Result" asp-route-id="@attempt.AttemptId">Xem kết quả</a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

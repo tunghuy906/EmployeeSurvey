@@ -31,24 +31,95 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 
 		// GET: Admin/AdminDepartments/Details/5
 		public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
 
-            var department = await _context.Departments
-                .FirstOrDefaultAsync(m => m.DeptId == id);
-            if (department == null)
-            {
-                return NotFound();
-            }
+			var department = await _context.Departments
+				.Include(d => d.Users) // lấy luôn danh sách nhân viên
+				.FirstOrDefaultAsync(m => m.DeptId == id);
 
-            return View(department);
-        }
+			if (department == null)
+			{
+				return NotFound();
+			}
 
-        // GET: Admin/AdminDepartments/Create
-        public IActionResult Create()
+			// Lấy toàn bộ user để cho dropdown
+			ViewBag.AllUsers = await _context.Users.ToListAsync();
+
+			return View(department);
+		}
+		[HttpGet]
+		public async Task<IActionResult> AssignToDepartment(int deptId)
+		{
+			// Lấy ra phòng ban theo Id
+			var department = await _context.Departments
+				.Include(d => d.Users) // lấy kèm danh sách user trong phòng ban
+				.FirstOrDefaultAsync(d => d.DeptId == deptId);
+
+			if (department == null)
+			{
+				return NotFound();
+			}
+
+			// Lấy danh sách user chưa nằm trong phòng ban (nếu muốn lọc)
+			var allUsers = await _context.Users.ToListAsync();
+			var usersNotInDept = allUsers
+				.Where(u => !department.Users.Any(d => d.UserId == u.UserId))
+				.ToList();
+
+			// Truyền sang view để hiển thị dropdown chọn user
+			ViewBag.Users = usersNotInDept;
+
+			return View(department); // View sẽ nhận model là Department
+		}
+
+		// POST: Admin/AdminDepartments/AddUser
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> AddUser(int deptId, int userId)
+		{
+			var department = await _context.Departments
+				.Include(d => d.Users)
+				.FirstOrDefaultAsync(d => d.DeptId == deptId);
+
+			var user = await _context.Users.FindAsync(userId);
+
+			if (department != null && user != null && !department.Users.Contains(user))
+			{
+				department.Users.Add(user);
+				await _context.SaveChangesAsync();
+			}
+
+			return RedirectToAction(nameof(Index));
+		}
+
+		// POST: Admin/AdminDepartments/RemoveUser
+		[HttpPost]
+		public async Task<IActionResult> RemoveUser(int deptId, int userId)
+		{
+			var department = await _context.Departments
+				.Include(d => d.Users)
+				.FirstOrDefaultAsync(d => d.DeptId == deptId);
+
+			if (department == null)
+			{
+				return NotFound();
+			}
+
+			var user = department.Users.FirstOrDefault(u => u.UserId == userId);
+			if (user != null)
+			{
+				department.Users.Remove(user);
+				await _context.SaveChangesAsync();
+			}
+
+			return RedirectToAction("AssignToDepartment", new { deptId = deptId });
+		}
+		// GET: Admin/AdminDepartments/Create
+		public IActionResult Create()
         {
             return View();
         }

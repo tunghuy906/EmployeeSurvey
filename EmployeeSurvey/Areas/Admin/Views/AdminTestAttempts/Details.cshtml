@@ -1,0 +1,90 @@
+﻿@model EmployeeSurvey.Models.TestAttempt
+
+@{
+    ViewData["Title"] = "Chi tiết lần thi";
+}
+
+<h2>Chi tiết lần thi</h2>
+
+<div class="mb-3">
+    <h4>Thông tin chung</h4>
+    <p><strong>Ứng viên:</strong> @Model.User?.FullName (@Model.User?.FullName)</p>
+    <p><strong>Bài test:</strong> @Model.Test?.Title</p>
+    <p><strong>Bắt đầu:</strong> @Model.StartTime</p>
+    <p><strong>Kết thúc:</strong> @Model.EndTime</p>
+    <p><strong>Điểm hiện tại:</strong> <span class="fw-bold">@Model.Score</span></p>
+    <p><strong>Trạng thái:</strong> @Model.Status</p>
+</div>
+
+<hr />
+
+<h4>Câu trả lời</h4>
+<table class="table table-bordered">
+    <thead class="table-light">
+        <tr>
+            <th style="width:40%">Câu hỏi</th>
+            <th style="width:30%">Câu trả lời</th>
+            <th style="width:15%">Kết quả</th>
+            <th style="width:15%">Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ans in Model.Answers)
+        {
+            <tr>
+                <td>@ans.Question?.Content</td>
+                <td>
+                    @if (ans.Option != null)
+                    {
+                        @ans.Option.Content
+                    }
+                    else
+                    {
+                        @ans.AnswerText
+                    }
+                </td>
+                <td>
+                    @if (ans.IsCorrect == true)
+                    {
+                        <span class="text-success fw-bold">Đúng</span>
+                    }
+                    else if (ans.IsCorrect == false)
+                    {
+                        <span class="text-danger fw-bold">Sai</span>
+                    }
+                    else
+                    {
+                        <span class="text-warning">Chưa chấm</span>
+                    }
+                </td>
+                <td>
+                    @if (ans.IsCorrect == null) // chỉ hiển thị nút chấm cho câu tự luận
+                    {
+                        <form asp-action="GradeAnswer" method="post" style="display:inline">
+                            <input type="hidden" name="answerId" value="@ans.AnswerId" />
+                            <button type="submit" name="isCorrect" value="true" class="btn btn-sm btn-success">Đúng</button>
+                            <button type="submit" name="isCorrect" value="false" class="btn btn-sm btn-danger">Sai</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+
+<h4>Feedback cho ứng viên</h4>
+<form asp-action="AddFeedback" method="post">
+    <input type="hidden" name="attemptId" value="@Model.AttemptId" />
+    <div class="form-group mb-2">
+        <textarea name="content" class="form-control" rows="3" placeholder="Nhập nhận xét..."></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Gửi Feedback</button>
+</form>
+
+<hr />
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+</div>

@@ -4,11 +4,13 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Question Options</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create New</a> |
+    
 </p>
+
 <table class="table">
     <thead>
         <tr>
@@ -25,23 +27,27 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Content)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsCorrect)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Question.QuestionId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.OptionId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.OptionId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.OptionId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsCorrect)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Question.QuestionId)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.OptionId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.OptionId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.OptionId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+<div>
+    <a asp-area="Admin" asp-controller="AdminQuestions" asp-action="Index">Back to Questions</a>
+</div>

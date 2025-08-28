@@ -1,0 +1,75 @@
+﻿@model EmployeeSurvey.Models.TestAttempt
+
+@{
+    ViewData["Title"] = "Kết quả bài test";
+    var duration = (Model.StartTime != null && Model.EndTime != null)
+        ? Model.EndTime.Value - Model.StartTime.Value
+        : TimeSpan.Zero;
+}
+
+<div class="container mt-4">
+    <h2 class="mb-3 text-info">📊 Kết quả bài test: @Model.Test?.Title</h2>
+
+    <div class="alert alert-primary">
+        <p><strong>Điểm số:</strong> @Model.Score / 10</p>
+        <p><strong>Bắt đầu:</strong> @Model.StartTime?.ToString("HH:mm:ss dd/MM/yyyy")</p>
+        <p><strong>Kết thúc:</strong> @Model.EndTime?.ToString("HH:mm:ss dd/MM/yyyy")</p>
+        <p><strong>Thời gian làm:</strong> @duration.Minutes phút @duration.Seconds giây</p>
+    </div>
+
+    <table class="table table-bordered">
+        <thead class="table-light">
+            <tr>
+                <th style="width:40%">Câu hỏi</th>
+                <th style="width:25%">Câu trả lời của bạn</th>
+                <th style="width:25%">Đáp án đúng</th>
+                <th style="width:10%">Kết quả</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ans in Model.Answers)
+            {
+                var correctOptions = ans.Question?.QuestionOptions
+                .Where(o => o.IsCorrect == true)
+                .Select(o => o.Content)
+                .ToList() ?? new List<string>();
+
+                <tr class="@(ans.IsCorrect == true ? "table-success" : "table-danger")">
+                    <td>@ans.Question?.Content</td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(ans.AnswerText))
+                        {
+                            @ans.AnswerText
+                        }
+                        else if (ans.Option != null)
+                        {
+                            @ans.Option?.Content
+                        }
+                        else
+                        {
+                            <span class="text-muted">Chưa trả lời</span>
+                        }
+                    </td>
+                    <td>
+                        @foreach (var opt in correctOptions)
+                        {
+                            <span class="badge bg-success me-1">@opt</span>
+                        }
+                    </td>
+                    <td>
+                        @if (ans.IsCorrect == true)
+                        {
+                            <span class="text-success fw-bold">✔</span>
+                        }
+                        else
+                        {
+                            <span class="text-danger fw-bold">✘</span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a class="btn btn-secondary mt-3" asp-action="Index">⬅ Quay lại</a>
+</div>

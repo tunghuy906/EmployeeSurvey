@@ -19,15 +19,17 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
             _context = context;
         }
 
-        // GET: Admin/AdminQuestionOptions
-        public async Task<IActionResult> Index()
-        {
-            var appDbContext = _context.QuestionOptions.Include(q => q.Question);
-            return View(await appDbContext.ToListAsync());
-        }
+		// GET: Admin/AdminQuestionOptions
+		public async Task<IActionResult> Index()
+		{
+			var options = await _context.QuestionOptions
+				.Include(o => o.Question)   // nếu muốn hiện thông tin câu hỏi cha
+				.ToListAsync();
 
-        // GET: Admin/AdminQuestionOptions/Details/5
-        public async Task<IActionResult> Details(int? id)
+			return View(options);  // ✅ Trả về đúng model
+		}
+		// GET: Admin/AdminQuestionOptions/Details/5
+		public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {

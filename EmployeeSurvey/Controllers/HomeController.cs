@@ -67,13 +67,29 @@ public class HomeController : Controller
 		return RedirectToAction("Login");
 	}
 
-	public IActionResult Index()
+	public async Task<IActionResult> Index()
 	{
-		if (HttpContext.Session.GetInt32("UserId") == null)
-			return RedirectToAction("Login");
+		var userId = HttpContext.Session.GetInt32("UserId");
+		if (userId == null) return RedirectToAction("Login");
 
-		ViewBag.FullName = HttpContext.Session.GetString("FullName");
-		return View();
+		var user = await _context.Users
+			.Include(u => u.Role)
+			.FirstOrDefaultAsync(u => u.UserId == userId);
+
+		if (user == null) return NotFound();
+
+		// 👉 Lấy danh sách phòng ban bằng SQL
+		var departments = await _context.Departments
+			.FromSqlRaw(@"
+            SELECT d.* FROM Departments d
+            INNER JOIN User_Department ud ON d.DeptId = ud.DeptId
+            WHERE ud.UserId = {0}", userId)
+			.Select(d => d.DeptName)
+			.ToListAsync();
+
+		ViewBag.Departments = string.Join(", ", departments);
+
+		return View(user);
 	}
 
 	// ========== FORGOT PASSWORD ==========
@@ -149,4 +165,105 @@ public class HomeController : Controller
 		TempData["Success"] = "Đổi mật khẩu thành công. Mời bạn đăng nhập.";
 		return RedirectToAction("Login");
 	}
+	// ========== PROFILE ==========
+	// Xem hồ sơ cá nhân
+	public async Task<IActionResult> Profile()
+	{
+		var userId = HttpContext.Session.GetInt32("UserId");
+		if (userId == null) return RedirectToAction("Login");
+
+		var user = await _context.Users
+			.Include(u => u.Role)
+			.FirstOrDefaultAsync(u => u.UserId == userId);
+
+		if (user == null) return NotFound();
+
+		return View(user); // Trả về View và bind trực tiếp entity User
+	}
+
+	[HttpPost]
+	[ValidateAntiForgeryToken]
+	public async Task<IActionResult> Profile(User model)
+	{
+		var userId = HttpContext.Session.GetInt32("UserId");
+		if (userId == null) return RedirectToAction("Login");
+
+		var user = await _context.Users.FirstOrDefaultAsync(u => u.UserId == userId);
+		if (user == null) return NotFound();
+
+		// 👉 chỉ cho phép cập nhật thông tin cơ bản
+		user.FullName = model.FullName;
+		user.Email = model.Email;
+		user.Level = model.Level;
+
+		await _context.SaveChangesAsync();
+
+		ViewBag.Message = "Cập nhật hồ sơ thành công!";
+		return View(user);
+	}
+
+
+	// ========== LỊCH SỬ BÀI TEST ==========
+	public async Task<IActionResult> History()
+	{
+		var userId = HttpContext.Session.GetInt32("UserId");
+		if (userId == null) return RedirectToAction("Login");
+
+		var histories = await _context.TestAttempts
+			.Include(t => t.Test)
+			.Where(t => t.UserId == userId)
+			.OrderByDescending(t => t.StartTime)
+			.ToListAsync();
+
+		return View(histories);
+	}
+	// ========== CHANGE PASSWORD ==========
+	[HttpGet]
+	public IActionResult ChangePassword()
+	{
+		if (HttpContext.Session.GetInt32("UserId") == null)
+			return RedirectToAction("Login");
+
+		return View();
+	}
+
+	[HttpPost]
+	[ValidateAntiForgeryToken]
+	public async Task<IActionResult> ChangePassword(string oldPassword, string newPassword, string confirmPassword)
+	{
+		var userId = HttpContext.Session.GetInt32("UserId");
+		if (userId == null) return RedirectToAction("Login");
+
+		var user = await _context.Users.FirstOrDefaultAsync(u => u.UserId == userId);
+		if (user == null) return NotFound();
+
+		// 1. Kiểm tra mật khẩu cũ
+		if (user.PasswordHash != oldPassword)
+		{
+			ViewBag.Error = "Mật khẩu cũ không đúng.";
+			return View();
+		}
+
+		// 2. Kiểm tra mật khẩu mới
+		if (string.IsNullOrWhiteSpace(newPassword) || newPassword.Length < 6)
+		{
+			ViewBag.Error = "Mật khẩu mới phải có ít nhất 6 ký tự.";
+			return View();
+		}
+
+		if (newPassword != confirmPassword)
+		{
+			ViewBag.Error = "Xác nhận mật khẩu không khớp.";
+			return View();
+		}
+
+		// 3. Cập nhật mật khẩu
+		user.PasswordHash = newPassword;
+		await _context.SaveChangesAsync();
+
+		TempData["Success"] = "Đổi mật khẩu thành công!";
+		return RedirectToAction("Index"); // quay lại trang cá nhân
+	}
+
+
 }

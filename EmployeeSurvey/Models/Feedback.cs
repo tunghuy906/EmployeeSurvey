@@ -18,7 +18,9 @@ public partial class Feedback
     [Column("TestID")]
     public int TestId { get; set; }
 
-    [StringLength(1000)]
+	public string CorrectTextAnswer { get; set; }
+
+	[StringLength(1000)]
     public string Content { get; set; } = null!;
 
     [Column(TypeName = "datetime")]
@@ -31,4 +33,5 @@ public partial class Feedback
     [ForeignKey("UserId")]
     [InverseProperty("Feedbacks")]
     public virtual User User { get; set; } = null!;
+
 }

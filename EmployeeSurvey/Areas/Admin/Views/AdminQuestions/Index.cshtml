@@ -9,6 +9,15 @@
 <p>
     <a asp-action="Create" class="btn btn-primary">Tạo câu hỏi mới</a>
 </p>
+<p>
+    <form asp-action="ImportExcel" enctype="multipart/form-data" method="post">
+        <div class="form-group">
+            <label>Upload Excel File</label>
+            <input type="file" name="file" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-success">Import</button>
+    </form>
+</p>
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -28,9 +37,9 @@
                 <td>@Html.DisplayFor(modelItem => item.Content)</td>
                 <td>@Html.DisplayFor(modelItem => item.QuestionType)</td>
                 <td>@Html.DisplayFor(modelItem => item.CreatedDate)</td>
-                <td>@Html.DisplayFor(modelItem => item.CreatedByNavigation.UserId)</td>
-                <td>@Html.DisplayFor(modelItem => item.Difficulty.DifficultyId)</td>
-                <td>@Html.DisplayFor(modelItem => item.Skill.SkillId)</td>
+                <td>@Html.DisplayFor(modelItem => item.CreatedByNavigation.FullName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Difficulty.LevelName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Skill.SkillName)</td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.QuestionId" class="btn btn-warning btn-sm">Sửa</a> |
                     <a asp-action="Details" asp-route-id="@item.QuestionId" class="btn btn-info btn-sm">Chi tiết</a> |

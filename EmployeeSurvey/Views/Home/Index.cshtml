@@ -1,8 +1,32 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model EmployeeSurvey.Models.User
+@{
+    ViewData["Title"] = "Trang cá nhân";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <h2 class="mb-4">Xin chào, @Model.FullName 👋</h2>
+
+    <div class="card shadow-sm p-4">
+        <div class="mb-3">
+            <strong>Email:</strong> @Model.Email
+        </div>
+        <div class="mb-3">
+            <strong>Vai trò:</strong> @Model.Role?.RoleName
+        </div>
+        <div class="mb-3">
+            <strong>Level:</strong> @Model.Level
+        </div>
+        <div class="mb-3">
+            <strong>Phòng ban:</strong> @ViewBag.Departments
+        </div>
+    </div>
+
+    <div class="mt-4 d-flex gap-2">
+        <a asp-action="History" class="btn btn-outline-secondary">
+            Xem lịch sử khảo sát
+        </a>
+        <a asp-action="ChangePassword" class="btn btn-warning">
+            Đổi mật khẩu
+        </a>
+    </div>
 </div>

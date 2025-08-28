@@ -25,7 +25,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="IsCorrect" class="control-label"></label>
-                <input asp-for="IsCorrect" class="form-control" />
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" asp-for="IsCorrect" value="true" id="IsCorrectTrue" />
+                    <label class="form-check-label" for="IsCorrectTrue">True</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" asp-for="IsCorrect" value="false" id="IsCorrectFalse" />
+                    <label class="form-check-label" for="IsCorrectFalse">False</label>
+                </div>
                 <span asp-validation-for="IsCorrect" class="text-danger"></span>
             </div>
             <div class="form-group">
