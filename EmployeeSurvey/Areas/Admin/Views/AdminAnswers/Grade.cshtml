@@ -1,0 +1,41 @@
+﻿@model EmployeeSurvey.Models.Answer
+
+@{
+    ViewData["Title"] = "Chấm câu trả lời";
+}
+
+<h2>Chấm câu trả lời</h2>
+
+<div class="card p-3 mb-3">
+    <h4>Câu hỏi:</h4>
+    <p>@Model.Question.Content</p>
+
+    <h4>Đáp án của học viên:</h4>
+    <p>@Model.AnswerText</p>
+</div>
+
+<form asp-action="Grade" method="post">
+    <input type="hidden" asp-for="AnswerId" />
+
+    <div class="form-group mb-3">
+        <label>Đánh giá câu trả lời:</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="isCorrect" value="true" id="correct" 
+                   @(Model.IsCorrect == true ? "checked" : "") />
+            <label class="form-check-label" for="correct">Đúng</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="isCorrect" value="false" id="incorrect" 
+                   @(Model.IsCorrect == false ? "checked" : "") />
+            <label class="form-check-label" for="incorrect">Sai</label>
+        </div>
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="adminComment">Nhận xét (nếu có):</label>
+        <textarea class="form-control" id="adminComment" name="adminComment" rows="3">@Model.AdminComment</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Lưu và chấm</button>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+</form>

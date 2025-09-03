@@ -1,0 +1,42 @@
+﻿@model EmployeeSurvey.Models.Department
+
+@{
+    ViewData["Title"] = "Gán nhân viên vào phòng ban";
+    var users = ViewBag.Users as List<EmployeeSurvey.Models.User>;
+}
+
+<h2>Gán nhân viên vào phòng ban: @Model.DeptName</h2>
+
+<p><strong>Mô tả:</strong> @Model.Description</p>
+
+<h4>Danh sách nhân viên hiện tại:</h4>
+<ul>
+    @foreach (var u in Model.Users)
+    {
+        <li>
+            @u.FullName
+            <form asp-action="RemoveUser" method="post" style="display:inline">
+                <input type="hidden" name="deptId" value="@Model.DeptId" />
+                <input type="hidden" name="userId" value="@u.UserId" />
+                <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+            </form>
+        </li>
+    }
+</ul>
+
+<hr />
+
+<h4>Thêm nhân viên mới:</h4>
+<form asp-action="AddUser" method="post">
+    <input type="hidden" name="deptId" value="@Model.DeptId" />
+
+    <select name="userId" class="form-control">
+        @foreach (var u in users)
+        {
+            <option value="@u.UserId">@u.FullName</option>
+        }
+    </select>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Thêm</button>
+</form>

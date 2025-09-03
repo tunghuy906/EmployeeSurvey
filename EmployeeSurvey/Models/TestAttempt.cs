@@ -39,5 +39,9 @@ public partial class TestAttempt
 
     [ForeignKey("UserId")]
     [InverseProperty("TestAttempts")]
-    public virtual User User { get; set; } = null!;
+    public virtual User? User { get; set; } = null!;
+
+	public bool IsSubmitted { get; set; } = false; // 👈 thêm dòng này
+
+	public virtual ICollection<Feedback> Feedbacks { get; set; } = new List<Feedback>();
 }

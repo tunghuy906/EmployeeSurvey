@@ -1,59 +1,64 @@
 ﻿@model IEnumerable<EmployeeSurvey.Models.Answer>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách câu trả lời";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Index</h1>
+<div class="content">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="fw-bold text-success">Danh sách câu trả lời</h1>
+    </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.AnswerText)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsCorrect)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Attempt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Option)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Question)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AnswerText)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsCorrect)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Attempt.AttemptId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Option.OptionId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Question.Content)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.AnswerId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.AnswerId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.AnswerId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <table class="table table-bordered table-hover align-middle">
+        <thead class="table-success text-center">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.AnswerText)</th>
+                <th>@Html.DisplayNameFor(model => model.IsCorrect)</th>
+                <th>@Html.DisplayNameFor(model => model.IsGraded)</th>
+                <th>@Html.DisplayNameFor(model => model.AdminComment)</th>
+                <th>@Html.DisplayNameFor(model => model.Question.Content)</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.AnswerText)</td>
+                    <td>
+                        @if (item.IsCorrect == true)
+                        {
+                            <span class="badge bg-success">Đúng</span>
+                        }
+                        else if (item.IsCorrect == false)
+                        {
+                            <span class="badge bg-danger">Sai</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">Chưa chấm</span>
+                        }
+                    </td>
+                    <td>
+                        @if (item.IsGraded)
+                        {
+                            <span class="badge bg-primary">Đã chấm</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-warning text-dark">Chưa chấm</span>
+                        }
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.AdminComment)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Question.Content)</td>
+                    <td class="text-center">
+                        <a asp-action="Details" asp-route-id="@item.AnswerId" class="btn btn-info btn-sm text-white">Chi tiết</a>
+                        <a asp-action="Grade" asp-route-id="@item.AnswerId" class="btn btn-warning btn-sm text-dark">Chấm điểm</a>
+                        <a asp-action="Delete" asp-route-id="@item.AnswerId" class="btn btn-danger btn-sm">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

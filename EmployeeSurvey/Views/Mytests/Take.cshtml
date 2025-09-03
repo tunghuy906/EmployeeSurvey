@@ -60,21 +60,6 @@
                         </div>
                         break;
 
-                    case "MultipleResponse":
-                        if (q.QuestionOptions != null)
-                        {
-                            foreach (var opt in q.QuestionOptions)
-                            {
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox"
-                                           name="answers[@i].SelectedOptionIds"
-                                           value="@opt.OptionId" />
-                                    <label class="form-check-label">@opt.Content</label>
-                                </div>
-                            }
-                        }
-                        break;
-
                     case "TextInput":
                         <textarea class="form-control" name="answers[@i].AnswerText" rows="3"></textarea>
                         break;

@@ -1,54 +1,51 @@
 ﻿@model EmployeeSurvey.Models.Answer
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Chấm câu trả lời";
 }
 
-<h1>Edit</h1>
-
-<h4>Answer</h4>
+<h2>Chấm câu trả lời</h2>
 <hr />
+
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="col-md-6">
+        <form asp-action="Edit" method="post">
+            @Html.AntiForgeryToken()
             <input type="hidden" asp-for="AnswerId" />
-            <div class="form-group">
-                <label asp-for="AttemptId" class="control-label"></label>
-                <select asp-for="AttemptId" class="form-control" asp-items="ViewBag.AttemptId"></select>
-                <span asp-validation-for="AttemptId" class="text-danger"></span>
+            <input type="hidden" asp-for="AttemptId" />
+            <input type="hidden" asp-for="QuestionId" />
+            <input type="hidden" asp-for="OptionId" />
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group mb-3">
+                <label class="control-label">Câu trả lời của thí sinh</label>
+                <textarea class="form-control" readonly>@Model.AnswerText</textarea>
             </div>
-            <div class="form-group">
-                <label asp-for="QuestionId" class="control-label"></label>
-                <select asp-for="QuestionId" class="form-control" asp-items="ViewBag.QuestionId"></select>
-                <span asp-validation-for="QuestionId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="OptionId" class="control-label"></label>
-                <select asp-for="OptionId" class="form-control" asp-items="ViewBag.OptionId"></select>
-                <span asp-validation-for="OptionId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AnswerText" class="control-label"></label>
-                <input asp-for="AnswerText" class="form-control" />
-                <span asp-validation-for="AnswerText" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IsCorrect" class="control-label"></label>
-                <input asp-for="IsCorrect" class="form-control" />
+
+            <div class="form-group mb-3">
+                <label asp-for="IsCorrect" class="control-label">Kết quả chấm</label><br />
+                <input type="radio" asp-for="IsCorrect" value="true" /> Đúng
+                <input type="radio" asp-for="IsCorrect" value="false" class="ms-3" /> Sai
                 <span asp-validation-for="IsCorrect" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+
+            <div class="form-group mb-3">
+                <label asp-for="AdminComment" class="control-label">Nhận xét của admin</label>
+                <textarea asp-for="AdminComment" class="form-control"></textarea>
+                <span asp-validation-for="AdminComment" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-3">
+                <input type="submit" value="Lưu kết quả" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

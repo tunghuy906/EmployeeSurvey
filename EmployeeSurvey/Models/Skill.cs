@@ -17,4 +17,5 @@ public partial class Skill
 
     [InverseProperty("Skill")]
     public virtual ICollection<Question> Questions { get; set; } = new List<Question>();
+	public ICollection<UserSkills> UserSkills { get; set; } = new List<UserSkills>();
 }

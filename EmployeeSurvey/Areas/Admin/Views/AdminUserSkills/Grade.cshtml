@@ -1,0 +1,63 @@
+﻿@model EmployeeSurvey.Models.User
+
+@{
+    ViewData["Title"] = "Chấm điểm nhân viên";
+    var allUsers = ViewBag.AllUsers as List<EmployeeSurvey.Models.User>;
+}
+
+<h2>Chấm điểm nhân viên</h2>
+
+<form method="get" asp-action="Grade" asp-controller="AdminUserSkills" asp-area="Admin">
+    <label for="userId">Chọn nhân viên:</label>
+    <select id="userId" name="userId" class="form-select" onchange="this.form.submit()">
+        <option value="">-- Chọn nhân viên --</option>
+        @foreach (var u in allUsers)
+        {
+            if (Model != null && Model.UserId == u.UserId)
+            {
+                <option value="@u.UserId" selected>@u.FullName</option>
+            }
+            else
+            {
+                <option value="@u.UserId">@u.FullName</option>
+            }
+        }
+    </select>
+</form>
+
+@if (Model != null)
+{
+    <h3>Chấm điểm cho: @Model.FullName</h3>
+
+    @* Chuyển ICollection sang List để dùng index *@
+    var userSkills = Model.UserSkills.ToList();
+
+    <form asp-action="Grade" asp-controller="AdminUserSkills" asp-area="Admin" method="post">
+        <input type="hidden" name="userId" value="@Model.UserId" />
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Kỹ năng</th>
+                    <th>Điểm (0-100)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < userSkills.Count; i++)
+                {
+                    var skill = userSkills[i];
+                    <tr>
+                        <td>@skill.Skill.SkillName</td>
+                        <td>
+                            <input type="hidden" name="userSkills[@i].Id" value="@skill.Id" />
+                            <input type="number" name="userSkills[@i].Score" value="@skill.Score"
+                                   class="form-control" min="0" max="100" />
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <button type="submit" class="btn btn-success">Lưu điểm</button>
+    </form>
+}

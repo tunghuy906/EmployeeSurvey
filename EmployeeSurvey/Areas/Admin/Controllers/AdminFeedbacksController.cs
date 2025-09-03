@@ -21,10 +21,15 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 
         // GET: Admin/AdminFeedbacks
         public async Task<IActionResult> Index()
-        {
-            var appDbContext = _context.Feedbacks.Include(f => f.Test).Include(f => f.User);
-            return View(await appDbContext.ToListAsync());
-        }
+		{
+			var feedbacks = _context.Feedbacks
+				.Include(f => f.User)
+				.Include(f => f.Test)
+				.OrderByDescending(f => f.CreatedDate)
+				.ToList();
+
+			return View(feedbacks);
+		}
 
         // GET: Admin/AdminFeedbacks/Details/5
         public async Task<IActionResult> Details(int? id)

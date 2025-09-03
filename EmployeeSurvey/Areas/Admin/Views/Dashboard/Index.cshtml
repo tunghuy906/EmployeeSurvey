@@ -36,7 +36,7 @@
                     <div class="text-warning mb-2">
                         <i class="fas fa-chart-line fa-2x"></i>
                     </div>
-                    <h2 class="fw-bold text-warning">@ViewBag.TotalFeedbacks</h2>
+                    <h2 class="fw-bold text-warning">@ViewBag.TotalReports</h2>
                     <p class="text-muted">Báo cáo</p>
                 </div>
             </div>
@@ -51,29 +51,44 @@
             </div>
         </div>
 
-        <!-- Biểu đồ và thông báo -->
+        <!-- Biểu đồ + Danh sách dữ liệu thực -->
         <div class="row mt-5">
+            <!-- Biểu đồ -->
             <div class="col-lg-8">
                 <div class="card shadow-sm border-0 rounded-4">
                     <div class="card-header bg-white fw-bold">
-                        Biểu đồ hoạt động
+                        Biểu đồ hoạt động (7 ngày gần nhất)
                     </div>
                     <div class="card-body">
                         <canvas id="activityChart" height="150"></canvas>
                     </div>
                 </div>
             </div>
+
+            <!-- Danh sách feedback mới -->
             <div class="col-lg-4">
                 <div class="card shadow-sm border-0 rounded-4">
                     <div class="card-header bg-white fw-bold">
-                        Thông báo
+                        Feedback mới nhất
                     </div>
                     <div class="card-body">
-                        <ul class="list-unstyled mb-0">
-                            <li>📢 Có 3 user mới đăng ký hôm nay</li>
-                            <li>⚡ Hệ thống backup thành công</li>
-                            <li>✅ Server đang hoạt động ổn định</li>
-                        </ul>
+                        @if (ViewBag.RecentFeedbacks != null && ViewBag.RecentFeedbacks.Count > 0)
+                        {
+                            <ul class="list-group list-group-flush">
+                                @foreach (var fb in ViewBag.RecentFeedbacks)
+                                {
+                                    <li class="list-group-item">
+                                        <strong>@fb.UserName:</strong> @fb.Content
+                                        <br />
+                                        <small class="text-muted">@fb.CreatedAt.ToString("dd/MM/yyyy HH:mm")</small>
+                                    </li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <p class="text-muted mb-0">Chưa có feedback nào.</p>
+                        }
                     </div>
                 </div>
             </div>
@@ -90,10 +105,10 @@
         var chart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['Thứ 2','Thứ 3','Thứ 4','Thứ 5','Thứ 6','Thứ 7','CN'],
+                labels: @Html.Raw(Json.Serialize(ViewBag.ChartLabels)),
                 datasets: [{
                     label: 'Người dùng mới',
-                    data: [5, 8, 6, 10, 12, 7, 9],
+                    data: @Html.Raw(Json.Serialize(ViewBag.ChartData)),
                     borderColor: '#0b8457',
                     backgroundColor: 'rgba(11,132,87,0.2)',
                     fill: true,

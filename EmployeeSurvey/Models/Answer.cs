@@ -36,4 +36,9 @@ public partial class Answer
     [ForeignKey("QuestionId")]
     [InverseProperty("Answers")]
     public virtual Question Question { get; set; } = null!;
+
+    public bool IsManual { get; set; } = false; // true = cần admin chấm
+    public bool IsGraded { get; set; } = false; // true = đã chấm xong
+	public string? AdminComment { get; set; }
+
 }

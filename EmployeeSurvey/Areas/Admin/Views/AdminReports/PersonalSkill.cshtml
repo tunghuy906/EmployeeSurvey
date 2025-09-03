@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "Thống kê Năng lực Cá nhân";
+    var mergedJson = ViewBag.MergedJson;
+    var user = ViewBag.User;
+    var users = ViewBag.Users;
+}
+
+<div class="container-fluid mt-4">
+    <h2 class="text-primary mb-4">📊 Thống kê Năng lực Cá nhân</h2>
+
+    <!-- Card: Tìm kiếm nhân viên -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-light fw-bold">
+            Tìm kiếm Nhân viên
+        </div>
+        <div class="card-body">
+            <form method="get" asp-action="PersonalSkill" class="d-flex align-items-center">
+                <label for="userId" class="form-label me-2 mb-0">Chọn một nhân viên để xem báo cáo chi tiết:</label>
+                <select id="userId" name="userId" class="form-select w-auto me-2">
+                    @foreach (var u in users)
+                    {
+                        <option value="@u.UserId" selected="@(u.UserId == user.UserId ? "selected" : null)">
+                            @u.FullName
+                        </option>
+                    }
+                </select>
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-bar-chart-fill"></i> Xem Báo cáo
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Card: Hồ sơ năng lực -->
+    <div class="card shadow-sm">
+        <div class="card-header bg-light fw-bold">
+            Hồ sơ Năng lực của: @user.FullName
+        </div>
+        <div class="card-body text-center">
+            <canvas id="skillChart" style="max-height:600px;"></canvas>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var mergedData = @Html.Raw(mergedJson);
+
+        var labels = mergedData.map(x => x.SkillName);
+        var userScores = mergedData.map(x => x.UserScore);
+        var avgScores = mergedData.map(x => x.AvgScore);
+
+        var ctx = document.getElementById('skillChart').getContext('2d');
+        var skillChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Năng lực cá nhân',
+                        data: userScores,
+                        fill: true,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgb(54, 162, 235)',
+                        pointBackgroundColor: 'rgb(54, 162, 235)',
+                        pointBorderColor: '#fff'
+                    },
+                    {
+                        label: 'Trung bình công ty',
+                        data: avgScores,
+                        fill: true,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgb(75, 192, 192)',
+                        pointBackgroundColor: 'rgb(75, 192, 192)',
+                        pointBorderColor: '#fff'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    title: {
+                        display: true,
+                        text: 'So sánh năng lực cá nhân với trung bình công ty'
+                    }
+                },
+                scales: {
+                    r: {
+                        angleLines: { display: true },
+                        suggestedMin: 0,
+                        suggestedMax: 100,
+                        ticks: { stepSize: 10 }
+                    }
+                }
+            }
+        });
+    </script>
+}

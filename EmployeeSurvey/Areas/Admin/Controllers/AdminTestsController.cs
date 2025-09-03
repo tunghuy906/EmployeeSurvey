@@ -46,11 +46,19 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 		// GET: Create Test + Assign
 		public IActionResult Create()
 		{
-			ViewData["CreatedBy"] = new SelectList(_context.Users, "UserId", "FullName");
+			// KHÔNG cần ViewData["CreatedBy"] nữa
 			ViewData["Questions"] = _context.Questions.ToList();
-			ViewBag.Departments = _context.Departments.Select(d => new SelectListItem { Value = d.DeptId.ToString(), Text = d.DeptName }).ToList();
-			ViewBag.Roles = _context.Users.Select(u => u.Role.RoleName).Distinct().Select(r => new SelectListItem { Value = r, Text = r }).ToList();
-			ViewBag.Levels = _context.Users.Select(u => u.Level).Distinct().Select(l => new SelectListItem { Value = l, Text = l }).ToList();
+			ViewBag.Departments = _context.Departments
+				.Select(d => new SelectListItem { Value = d.DeptId.ToString(), Text = d.DeptName })
+				.ToList();
+			ViewBag.Roles = _context.Users
+				.Select(u => u.Role.RoleName).Distinct()
+				.Select(r => new SelectListItem { Value = r, Text = r })
+				.ToList();
+			ViewBag.Levels = _context.Users
+				.Select(u => u.Level).Distinct()
+				.Select(l => new SelectListItem { Value = l, Text = l })
+				.ToList();
 
 			return View();
 		}
@@ -59,34 +67,56 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Create(
-			[Bind("TestId,Title,Description,Duration,PassScore,CreatedBy,CreatedDate,RandomQuestionCount")] Test test,
-			int[] selectedQuestions,
-			int[] selectedDeptIDs,
-			string[] selectedRoles,
-			string[] selectedLevels)
+	[Bind("TestId,Title,Description,Duration,PassScore,CreatedDate,RandomQuestionCount")] Test test,
+	int[] selectedQuestions,
+	int[] selectedDeptIDs,
+	string[] selectedRoles,
+	string[] selectedLevels)
 		{
 			if (!ModelState.IsValid)
 			{
-				// Load lại dropdown nếu ModelState invalid
-				ViewData["CreatedBy"] = new SelectList(_context.Users, "UserId", "FullName", test.CreatedBy);
+				// Không cần load lại CreatedBy dropdown nữa
 				ViewData["Questions"] = _context.Questions.ToList();
-				ViewBag.Departments = _context.Departments.Select(d => new SelectListItem { Value = d.DeptId.ToString(), Text = d.DeptName }).ToList();
-				ViewBag.Roles = _context.Users.Select(u => u.Role.RoleName).Distinct().Select(r => new SelectListItem { Value = r, Text = r }).ToList();
-				ViewBag.Levels = _context.Users.Select(u => u.Level).Distinct().Select(l => new SelectListItem { Value = l, Text = l }).ToList();
+				ViewBag.Departments = _context.Departments
+					.Select(d => new SelectListItem { Value = d.DeptId.ToString(), Text = d.DeptName })
+					.ToList();
+				ViewBag.Roles = _context.Users
+					.Select(u => u.Role.RoleName).Distinct()
+					.Select(r => new SelectListItem { Value = r, Text = r })
+					.ToList();
+				ViewBag.Levels = _context.Users
+					.Select(u => u.Level).Distinct()
+					.Select(l => new SelectListItem { Value = l, Text = l })
+					.ToList();
 				return View(test);
 			}
 
-			// 1️⃣ Thêm Test
+			// ✅ Lấy userId từ Session hoặc Claims (tuỳ bạn đang lưu kiểu nào)
+			var userId = HttpContext.Session.GetInt32("UserId");
+			if (userId == null)
+			{
+				return RedirectToAction("Login", "Account"); // hoặc Home/Login
+			}
+
+			test.CreatedBy = userId.Value; // luôn là admin đang login
+			test.CreatedDate = DateTime.Now;
+
+			// 1️⃣ Lưu Test
 			_context.Tests.Add(test);
 			await _context.SaveChangesAsync();
 
-			// 2️⃣ Thêm TestQuestions thủ công + ngẫu nhiên
+			// 2️⃣ Thêm TestQuestions (selected + random)
 			if (selectedQuestions != null && selectedQuestions.Length > 0)
 			{
 				int order = 1;
 				foreach (var qid in selectedQuestions)
 				{
-					_context.TestQuestions.Add(new TestQuestion { TestId = test.TestId, QuestionId = qid, OrderNo = order++ });
+					_context.TestQuestions.Add(new TestQuestion
+					{
+						TestId = test.TestId,
+						QuestionId = qid,
+						OrderNo = order++
+					});
 				}
 			}
 			if (test.RandomQuestionCount.HasValue && test.RandomQuestionCount.Value > 0)
@@ -97,12 +127,17 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 				int order = 1;
 				foreach (var q in randomQuestions)
 				{
-					_context.TestQuestions.Add(new TestQuestion { TestId = test.TestId, QuestionId = q.QuestionId, OrderNo = order++ });
+					_context.TestQuestions.Add(new TestQuestion
+					{
+						TestId = test.TestId,
+						QuestionId = q.QuestionId,
+						OrderNo = order++
+					});
 				}
 			}
 			await _context.SaveChangesAsync();
 
-			// 3️⃣ Phân công bài test
+			// 3️⃣ Assign cho Users
 			var usersQuery = _context.Users.Include(u => u.Depts).Include(u => u.Role).AsQueryable();
 			if (selectedDeptIDs?.Any() == true)
 				usersQuery = usersQuery.Where(u => u.Depts.Any(d => selectedDeptIDs.Contains(d.DeptId)));
@@ -120,7 +155,13 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 					{
 						if (!_context.Assignments.Any(a => a.TestId == test.TestId && a.UserId == user.UserId && a.DeptId == dept.DeptId))
 						{
-							_context.Assignments.Add(new Assignment { TestId = test.TestId, UserId = user.UserId, DeptId = dept.DeptId, AssignedDate = DateTime.Now });
+							_context.Assignments.Add(new Assignment
+							{
+								TestId = test.TestId,
+								UserId = user.UserId,
+								DeptId = dept.DeptId,
+								AssignedDate = DateTime.Now
+							});
 						}
 					}
 				}
@@ -129,7 +170,6 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 
 			return RedirectToAction(nameof(Index));
 		}
-
 
 		// GET: Admin/AdminTests/Edit/5
 		public async Task<IActionResult> Edit(int? id)
@@ -152,7 +192,7 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 		// POST: Admin/AdminTests/Edit/5
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Edit(int id,[Bind("TestId,Title,Description,Duration,PassScore,CreatedBy,CreatedDate,RandomQuestionCount")] Test test,int[] selectedQuestions)
+		public async Task<IActionResult> Edit(int id, [Bind("TestId,Title,Description,Duration,PassScore,CreatedBy,CreatedDate,RandomQuestionCount")] Test test, int[] selectedQuestions)
 		{
 			if (id != test.TestId) return NotFound();
 
@@ -245,14 +285,36 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 		{
 			var test = await _context.Tests
 				.Include(t => t.TestQuestions)
+				.Include(t => t.Assignments)
+				.Include(t => t.TestAttempts)
+				.Include(t => t.Feedbacks)
 				.FirstOrDefaultAsync(t => t.TestId == id);
 
 			if (test != null)
 			{
-				// Xóa TestQuestions trước
-				_context.TestQuestions.RemoveRange(test.TestQuestions);
+				// 1. Xoá tất cả Answers thuộc TestAttempts
+				var attemptIds = test.TestAttempts.Select(a => a.AttemptId).ToList();
+				var answers = _context.Answers.Where(a => attemptIds.Contains(a.AttemptId));
+				if (answers.Any())
+					_context.Answers.RemoveRange(answers);
 
-				// Xóa Test
+				// 2. Xoá TestAttempts
+				if (test.TestAttempts.Any())
+					_context.TestAttempts.RemoveRange(test.TestAttempts);
+
+				// 3. Xoá Assignments
+				if (test.Assignments.Any())
+					_context.Assignments.RemoveRange(test.Assignments);
+
+				// 4. Xoá TestQuestions
+				if (test.TestQuestions.Any())
+					_context.TestQuestions.RemoveRange(test.TestQuestions);
+
+				// 5. Xoá Feedbacks
+				if (test.Feedbacks.Any())
+					_context.Feedbacks.RemoveRange(test.Feedbacks);
+
+				// 6. Cuối cùng xoá Test
 				_context.Tests.Remove(test);
 
 				await _context.SaveChangesAsync();
@@ -261,9 +323,11 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 			return RedirectToAction(nameof(Index));
 		}
 
+
 		private bool TestExists(int id)
 		{
 			return _context.Tests.Any(e => e.TestId == id);
 		}
+
 	}
 }

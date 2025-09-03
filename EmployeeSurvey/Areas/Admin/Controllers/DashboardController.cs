@@ -1,5 +1,6 @@
 ﻿using EmployeeSurvey.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeSurvey.Admin.Areas.Admin.Controllers
 {
@@ -21,7 +22,7 @@ namespace EmployeeSurvey.Admin.Areas.Admin.Controllers
 			// Đếm số bài test
 			ViewBag.TotalTests = _context.Tests.Count();
 
-			// Đếm số feedback (coi như báo cáo)
+			// Đếm số feedback (báo cáo)
 			ViewBag.TotalReports = _context.Feedbacks.Count();
 
 			// Đếm số user có role Admin
@@ -39,9 +40,31 @@ namespace EmployeeSurvey.Admin.Areas.Admin.Controllers
 				}
 			}
 
+			// -----------------------------
+			// Biểu đồ: số user đăng ký theo 7 ngày gần nhất
+			// -----------------------------
+			var today = DateTime.Today;
+			var last7Days = Enumerable.Range(0, 7)
+									  .Select(i => today.AddDays(-i))
+									  .OrderBy(d => d)
+									  .ToList();
+
+			var registrations = _context.Users
+				.Where(u => u.CreatedAt >= last7Days.First())
+				.GroupBy(u => u.CreatedAt.Date)
+				.Select(g => new { Date = g.Key, Count = g.Count() })
+				.ToList();
+
+			// Tạo nhãn (label) cho chart: dd/MM
+			var chartLabels = last7Days.Select(d => d.ToString("dd/MM")).ToList();
+			var chartData = last7Days.Select(d =>
+				registrations.FirstOrDefault(r => r.Date == d)?.Count ?? 0
+			).ToList();
+
+			ViewBag.ChartLabels = chartLabels;
+			ViewBag.ChartData = chartData;
+
 			return View();
 		}
-
 	}
-
 }

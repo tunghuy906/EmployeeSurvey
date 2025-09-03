@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EmployeeSurvey.Models;
+using DocumentFormat.OpenXml.Office.SpreadSheetML.Y2023.MsForms;
 
 namespace EmployeeSurvey.Areas.Admin.Controllers
 {
@@ -20,14 +21,21 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
         }
 
 		// GET: Admin/AdminQuestionOptions
-		public async Task<IActionResult> Index()
+		public IActionResult Index(int questionId)
 		{
-			var options = await _context.QuestionOptions
-				.Include(o => o.Question)   // nếu muốn hiện thông tin câu hỏi cha
-				.ToListAsync();
+			var options = _context.QuestionOptions
+				.Include(o => o.Question)
+				.Where(o => o.QuestionId == questionId)
+				.ToList();
 
-			return View(options);  // ✅ Trả về đúng model
+			ViewBag.QuestionContent = _context.Questions
+				.Where(q => q.QuestionId == questionId)
+				.Select(q => q.Content)
+				.FirstOrDefault();
+
+			return View(options);
 		}
+
 		// GET: Admin/AdminQuestionOptions/Details/5
 		public async Task<IActionResult> Details(int? id)
         {

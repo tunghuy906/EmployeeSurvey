@@ -54,9 +54,8 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 		[HttpGet]
 		public async Task<IActionResult> AssignToDepartment(int deptId)
 		{
-			// Lấy ra phòng ban theo Id
 			var department = await _context.Departments
-				.Include(d => d.Users) // lấy kèm danh sách user trong phòng ban
+				.Include(d => d.Users)
 				.FirstOrDefaultAsync(d => d.DeptId == deptId);
 
 			if (department == null)
@@ -64,16 +63,15 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 				return NotFound();
 			}
 
-			// Lấy danh sách user chưa nằm trong phòng ban (nếu muốn lọc)
+			// Lấy danh sách user chưa nằm trong phòng ban
 			var allUsers = await _context.Users.ToListAsync();
 			var usersNotInDept = allUsers
 				.Where(u => !department.Users.Any(d => d.UserId == u.UserId))
 				.ToList();
 
-			// Truyền sang view để hiển thị dropdown chọn user
 			ViewBag.Users = usersNotInDept;
 
-			return View(department); // View sẽ nhận model là Department
+			return View(department); // Trả về view AssignToDepartment.cshtml
 		}
 
 		// POST: Admin/AdminDepartments/AddUser

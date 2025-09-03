@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "Báo cáo theo Level";
+    var reportLevel = ViewBag.ReportByLevel as IEnumerable<dynamic>;
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-success">📊 Báo cáo theo Cấp độ (Junior / Middle / Senior)</h2>
+
+    <div class="row">
+        <!-- Biểu đồ cột -->
+        <div class="col-md-7">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-success text-white">
+                    Số lượng Nhân sự theo Level
+                </div>
+                <div class="card-body">
+                    <canvas id="barChartLevel"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Biểu đồ tròn -->
+        <div class="col-md-5">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-info text-white">
+                    Tỷ lệ Cơ cấu theo Level
+                </div>
+                <div class="card-body">
+                    <canvas id="pieChartLevel"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bảng thống kê -->
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            Bảng Thống kê Chi tiết
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-hover text-center align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Level</th>
+                        <th>Số lượng Nhân sự</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in reportLevel)
+                    {
+                        <tr>
+                            <td>@item.LevelName</td>
+                            <td>@item.TotalUsers</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ChartJS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var labelsLevel = [];
+    var dataLevel = [];
+
+    @foreach (var item in reportLevel)
+    {
+        <text>
+                labelsLevel.push("@item.LevelName");
+                dataLevel.push(@item.TotalUsers);
+        </text>
+    }
+
+    // Biểu đồ cột
+    new Chart(document.getElementById("barChartLevel"), {
+        type: 'bar',
+        data: {
+            labels: labelsLevel,
+            datasets: [{
+                label: "Số lượng Nhân sự",
+                data: dataLevel,
+                backgroundColor: ['#4e79a7','#59a14f','#f28e2b']
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } }
+        }
+    });
+
+    // Biểu đồ tròn
+    new Chart(document.getElementById("pieChartLevel"), {
+        type: 'doughnut',
+        data: {
+            labels: labelsLevel,
+            datasets: [{
+                data: dataLevel,
+                backgroundColor: ['#4e79a7','#59a14f','#f28e2b']
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'bottom' }
+            }
+        }
+    });
+</script>

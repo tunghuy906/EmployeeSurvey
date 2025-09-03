@@ -85,7 +85,7 @@ namespace EmployeeSurvey.Controllers
 
 			// Lấy attempt đang làm
 			var attempt = _context.TestAttempts
-				.FirstOrDefault(a => a.TestId == testId && a.UserId == userId && a.Status == "InProgress");
+				.FirstOrDefault(a => a.TestId == testId && a.UserId == userId && (a.Status == "InProgress" || a.Status == "Draft"));
 
 			if (attempt == null)
 			{
@@ -103,8 +103,7 @@ namespace EmployeeSurvey.Controllers
 
 			// Kết thúc attempt
 			attempt.EndTime = DateTime.Now;
-			attempt.Status = "Submitted";
-			// Nếu muốn lưu thời gian làm bài
+			attempt.Status = "Submitted"; // ✅ để khớp với Index view
 			if (timeSpent > 0)
 			{
 				var start = attempt.StartTime ?? DateTime.Now;
@@ -112,7 +111,11 @@ namespace EmployeeSurvey.Controllers
 			}
 
 			int correct = 0;
-			int total = _context.TestQuestions.Count(tq => tq.TestId == testId);
+
+			// chỉ tính câu hỏi auto-chấm
+			int total = _context.TestQuestions
+				.Include(tq => tq.Question)
+				.Count(tq => tq.TestId == testId && tq.Question.QuestionType != "TextInput");
 
 			foreach (var ans in answers)
 			{
@@ -128,81 +131,90 @@ namespace EmployeeSurvey.Controllers
 				{
 					switch (question.QuestionType)
 					{
+						// ✅ MCQ
 						case "MCQ":
-						case "TrueFalse":
 							var selectedOption = _context.QuestionOptions
 								.FirstOrDefault(o => o.OptionId == ans.OptionId);
-							if (selectedOption != null && selectedOption.IsCorrect == true)
-							{
-								ans.IsCorrect = true;
-								correct++;
-							}
-							else ans.IsCorrect = false;
+
+							ans.IsCorrect = (selectedOption != null && selectedOption.IsCorrect == true);
+							if (ans.IsCorrect == true) correct++;
 							break;
 
-						case "MultipleResponse":
-							var correctOptions = question.QuestionOptions
-								.Where(o => o.IsCorrect == true)
-								.Select(o => o.OptionId)
-								.ToList();
-
-							var userOptions = answers
-								.Where(a => a.QuestionId == question.QuestionId && a.OptionId.HasValue)
-								.Select(a => a.OptionId.Value)   // chỉ lấy giá trị khi chắc chắn có
-								.ToList();
-
-							// so sánh 2 tập hợp
-							if (correctOptions.Count == userOptions.Count &&
-								!correctOptions.Except(userOptions).Any())
+						// ✅ True/False
+						case "TrueFalse":
+							if (ans.OptionId.HasValue)
 							{
-								ans.IsCorrect = true;
-								correct++;
+								var tfOption = _context.QuestionOptions
+									.FirstOrDefault(o => o.OptionId == ans.OptionId);
+
+								ans.IsCorrect = (tfOption != null && tfOption.IsCorrect == true);
 							}
-							else ans.IsCorrect = false;
+							else if (!string.IsNullOrEmpty(ans.AnswerText))
+							{
+								var tfOption = question.QuestionOptions
+									.FirstOrDefault(o => o.Content.Equals(ans.AnswerText, StringComparison.OrdinalIgnoreCase));
+
+								ans.IsCorrect = (tfOption != null && tfOption.IsCorrect == true);
+								if (ans.IsCorrect == true) ans.OptionId = tfOption.OptionId;
+							}
+							if (ans.IsCorrect == true) correct++;
 							break;
 
+						// ❌ TextInput (chưa chấm → để null)
 						case "TextInput":
-							// chưa auto-chấm
-							ans.IsCorrect = false;
+							ans.IsCorrect = null;
 							break;
 					}
 				}
 
 				_context.Answers.Add(ans);
 			}
+			// Tổng số câu trong bài test
+			int totalQuestions = attempt.Answers.Count;
 
-			// Tính điểm
-			decimal score = (total > 0) ? Math.Round(10.0m * correct / total, 2) : 0;
-			attempt.Score = score;
-			attempt.Status = "Completed";
+			// Số câu auto đã trả lời đúng
+			int autoCorrect = attempt.Answers.Count(a =>
+				(a.Question.QuestionType == "MCQ" || a.Question.QuestionType == "TrueFalse")
+				&& a.IsCorrect == true);
 
+			// Số câu tự luận đã chấm đúng
+			int gradedTextCorrect = attempt.Answers.Count(a =>
+				a.Question.QuestionType == "TextInput" && a.IsGraded == true && a.IsCorrect == true);
+
+			// Tính điểm (auto + text đã chấm)
+			decimal tempScore = (totalQuestions > 0)
+				? Math.Round(((decimal)(autoCorrect + gradedTextCorrect) / totalQuestions) * 10m, 2)
+				: 0;
+
+			// Lưu vào DB
+			attempt.Score = tempScore;
 			_context.Update(attempt);
 			_context.SaveChanges();
 
 			return RedirectToAction("Result", new { id = attempt.AttemptId });
+
+
 		}
 
-
-		// =================== XEM KẾT QUẢ ===================
-		public IActionResult Result(int id)
+		public IActionResult Result(int id) // ✅ đổi về id cho khớp route
 		{
 			var userId = GetCurrentUserId();
 			if (userId == null)
 				return RedirectToAction("Login", "Home");
 
+			// Lấy attempt theo AttemptId và UserId
 			var attempt = _context.TestAttempts
 				.Include(ta => ta.Test)
 				.Include(ta => ta.Answers)
 					.ThenInclude(a => a.Question)
-						.ThenInclude(q => q.QuestionOptions) // load cả option của câu hỏi
+						.ThenInclude(q => q.QuestionOptions)
 				.Include(ta => ta.Answers)
-					.ThenInclude(a => a.Option) // option user chọn
+					.ThenInclude(a => a.Option)
 				.FirstOrDefault(ta => ta.AttemptId == id && ta.UserId == userId);
 
 			if (attempt == null)
 				return NotFound();
 
-			// Truyền xuống view đầy đủ dữ liệu
 			return View(attempt);
 		}
 
@@ -211,5 +223,6 @@ namespace EmployeeSurvey.Controllers
 		{
 			return HttpContext.Session.GetInt32("UserId");
 		}
+
 	}
 }

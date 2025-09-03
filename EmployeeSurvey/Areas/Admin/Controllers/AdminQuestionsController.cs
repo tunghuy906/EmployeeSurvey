@@ -10,44 +10,45 @@ using ClosedXML.Excel;
 
 namespace EmployeeSurvey.Areas.Admin.Controllers
 {
-    [Area("Admin")]
-    public class AdminQuestionsController : Controller
-    {
-        private readonly AppDbContext _context;
+	[Area("Admin")]
+	public class AdminQuestionsController : Controller
+	{
+		private readonly AppDbContext _context;
 
-        public AdminQuestionsController(AppDbContext context)
-        {
-            _context = context;
-        }
+		public AdminQuestionsController(AppDbContext context)
+		{
+			_context = context;
+		}
 
-        // GET: Admin/AdminQuestions
-        public async Task<IActionResult> Index()
-        {
-            var appDbContext = _context.Questions.Include(q => q.CreatedByNavigation).Include(q => q.Difficulty).Include(q => q.Skill);
-            return View(await appDbContext.ToListAsync());
-        }
+		// GET: Admin/AdminQuestions
+		public async Task<IActionResult> Index()
+		{
+			var appDbContext = _context.Questions.Include(q => q.CreatedByNavigation).Include(q => q.Difficulty).Include(q => q.Skill);
+			return View(await appDbContext.ToListAsync());
+		}
 
-        // GET: Admin/AdminQuestions/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+		// GET: Admin/AdminQuestions/Details/5
+		public async Task<IActionResult> Details(int? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
 
-            var question = await _context.Questions
-                .Include(q => q.CreatedByNavigation)
-                .Include(q => q.Difficulty)
-                .Include(q => q.Skill)
-                .FirstOrDefaultAsync(m => m.QuestionId == id);
-            if (question == null)
-            {
-                return NotFound();
-            }
+			var question = await _context.Questions
+				.Include(q => q.CreatedByNavigation)
+				.Include(q => q.Difficulty)
+				.Include(q => q.Skill)
+				.FirstOrDefaultAsync(m => m.QuestionId == id);
+			if (question == null)
+			{
+				return NotFound();
+			}
 
-            return View(question);
-        }
+			return View(question);
+		}
 
+		// GET: Admin/AdminQuestions/Create
 		// GET: Admin/AdminQuestions/Create
 		[HttpGet]
 		public IActionResult Create()
@@ -56,133 +57,164 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 			ViewData["DifficultyId"] = new SelectList(_context.Difficulties, "DifficultyId", "LevelName");
 			ViewData["SkillId"] = new SelectList(_context.Skills, "SkillId", "SkillName");
 
-			return View(new QuestionCreateViewModel
+			// Tạo sẵn 4 option mặc định cho form MCQ
+			var vm = new QuestionCreateViewModel
 			{
-				Content = string.Empty,
-				QuestionType = string.Empty,
+				QuestionType = "MCQ",
 				Options = new List<QuestionOptionViewModel>
 		{
-			new QuestionOptionViewModel { Content = string.Empty, IsCorrect = false },
-			new QuestionOptionViewModel { Content = string.Empty, IsCorrect = false },
-			new QuestionOptionViewModel { Content = string.Empty, IsCorrect = false },
-			new QuestionOptionViewModel { Content = string.Empty, IsCorrect = false }
+			new QuestionOptionViewModel(),
+			new QuestionOptionViewModel(),
+			new QuestionOptionViewModel(),
+			new QuestionOptionViewModel()
 		}
-			});
+			};
+
+			return View(vm);
 		}
 
+
+		// POST: Admin/AdminQuestions/Create
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Create(QuestionCreateViewModel model)
 		{
-			if (ModelState.IsValid)
+			if (!ModelState.IsValid)
 			{
-				var question = new Question
-				{
-					Content = model.Content,
-					QuestionType = model.QuestionType,
-					SkillId = model.SkillID,
-					DifficultyId = model.DifficultyID,
-					CreatedBy = model.CreatedBy,
-					CreatedDate = DateTime.Now,
-					QuestionOptions = model.Options.Select(o => new QuestionOption
+				ViewData["DifficultyId"] = new SelectList(_context.Difficulties, "DifficultyId", "LevelName", model.DifficultyID);
+				ViewData["SkillId"] = new SelectList(_context.Skills, "SkillId", "SkillName", model.SkillID);
+				return View(model);
+			}
+
+			// Lấy userId từ Session hoặc Claims
+			var userId = HttpContext.Session.GetInt32("UserId");
+			if (userId == null)
+			{
+				return RedirectToAction("Login", "Home");
+			}
+
+			var question = new Question
+			{
+				Content = model.Content,
+				QuestionType = model.QuestionType,
+				SkillId = model.SkillID,
+				DifficultyId = model.DifficultyID,
+				CreatedBy = userId.Value, // set trực tiếp từ session
+				CreatedDate = DateTime.Now,
+				QuestionOptions = new List<QuestionOption>()
+			};
+
+			if (model.QuestionType == "TrueFalse")
+			{
+				question.QuestionOptions = new List<QuestionOption>
+		{
+			new QuestionOption { Content = "True", IsCorrect = model.Options.Any(o => o.Content == "True" && o.IsCorrect) },
+			new QuestionOption { Content = "False", IsCorrect = model.Options.Any(o => o.Content == "False" && o.IsCorrect) }
+		};
+			}
+			else if (model.QuestionType == "MCQ" || model.QuestionType == "MultipleResponse")
+			{
+				question.QuestionOptions = model.Options
+					.Where(o => !string.IsNullOrWhiteSpace(o.Content))
+					.Select(o => new QuestionOption
 					{
 						Content = o.Content,
 						IsCorrect = o.IsCorrect
-					}).ToList()
-				};
-
-				_context.Questions.Add(question);
-				await _context.SaveChangesAsync();
-				return RedirectToAction(nameof(Index));
+					}).ToList();
+			}
+			else if (model.QuestionType == "TextInput")
+			{
+				if (!string.IsNullOrWhiteSpace(model.Content))
+				{
+					question.QuestionOptions = new List<QuestionOption>
+			{
+				new QuestionOption { Content = model.Content, IsCorrect = true }
+			};
+				}
 			}
 
-			// Nếu có lỗi validation thì bind lại SelectList với Text là Name
-			ViewData["CreatedBy"] = new SelectList(_context.Users, "UserId", "FullName", model.CreatedBy);
-			ViewData["DifficultyId"] = new SelectList(_context.Difficulties, "DifficultyId", "LevelName", model.DifficultyID);
-			ViewData["SkillId"] = new SelectList(_context.Skills, "SkillId", "SkillName", model.SkillID);
+			_context.Questions.Add(question);
+			await _context.SaveChangesAsync();
 
-			return View(model);
+			return RedirectToAction(nameof(Index));
 		}
-
 
 
 		// GET: Admin/AdminQuestions/Edit/5
 		public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
 
-            var question = await _context.Questions.FindAsync(id);
-            if (question == null)
-            {
-                return NotFound();
-            }
-            ViewData["CreatedBy"] = new SelectList(_context.Users, "UserId", "FullName", question.CreatedBy);
-            ViewData["DifficultyId"] = new SelectList(_context.Difficulties, "DifficultyId", "LevelName", question.DifficultyId);
-            ViewData["SkillId"] = new SelectList(_context.Skills, "SkillId", "SkillName", question.SkillId);
-            return View(question);
-        }
+			var question = await _context.Questions.FindAsync(id);
+			if (question == null)
+			{
+				return NotFound();
+			}
+			ViewData["CreatedBy"] = new SelectList(_context.Users, "UserId", "FullName", question.CreatedBy);
+			ViewData["DifficultyId"] = new SelectList(_context.Difficulties, "DifficultyId", "LevelName", question.DifficultyId);
+			ViewData["SkillId"] = new SelectList(_context.Skills, "SkillId", "SkillName", question.SkillId);
+			return View(question);
+		}
 
-        // POST: Admin/AdminQuestions/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("QuestionId,Content,QuestionType,SkillId,DifficultyId,CreatedBy,CreatedDate")] Question question)
-        {
-            if (id != question.QuestionId)
-            {
-                return NotFound();
-            }
+		// POST: Admin/AdminQuestions/Edit/5
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> Edit(int id, [Bind("QuestionId,Content,QuestionType,SkillId,DifficultyId,CreatedBy,CreatedDate")] Question question)
+		{
+			if (id != question.QuestionId)
+			{
+				return NotFound();
+			}
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(question);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!QuestionExists(question.QuestionId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["CreatedBy"] = new SelectList(_context.Users, "UserId", "FullName", question.CreatedBy);
-            ViewData["DifficultyId"] = new SelectList(_context.Difficulties, "DifficultyId", "LevelName", question.DifficultyId);
-            ViewData["SkillId"] = new SelectList(_context.Skills, "SkillId", "SkillName", question.SkillId);
-            return View(question);
-        }
+			if (ModelState.IsValid)
+			{
+				try
+				{
+					_context.Update(question);
+					await _context.SaveChangesAsync();
+				}
+				catch (DbUpdateConcurrencyException)
+				{
+					if (!QuestionExists(question.QuestionId))
+					{
+						return NotFound();
+					}
+					else
+					{
+						throw;
+					}
+				}
+				return RedirectToAction(nameof(Index));
+			}
+			ViewData["CreatedBy"] = new SelectList(_context.Users, "UserId", "FullName", question.CreatedBy);
+			ViewData["DifficultyId"] = new SelectList(_context.Difficulties, "DifficultyId", "LevelName", question.DifficultyId);
+			ViewData["SkillId"] = new SelectList(_context.Skills, "SkillId", "SkillName", question.SkillId);
+			return View(question);
+		}
 
-        // GET: Admin/AdminQuestions/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+		// GET: Admin/AdminQuestions/Delete/5
+		public async Task<IActionResult> Delete(int? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
 
-            var question = await _context.Questions
-                .Include(q => q.CreatedByNavigation)
-                .Include(q => q.Difficulty)
-                .Include(q => q.Skill)
-                .FirstOrDefaultAsync(m => m.QuestionId == id);
-            if (question == null)
-            {
-                return NotFound();
-            }
+			var question = await _context.Questions
+				.Include(q => q.CreatedByNavigation)
+				.Include(q => q.Difficulty)
+				.Include(q => q.Skill)
+				.FirstOrDefaultAsync(m => m.QuestionId == id);
+			if (question == null)
+			{
+				return NotFound();
+			}
 
-            return View(question);
-        }
+			return View(question);
+		}
 
 		// POST: Admin/AdminQuestions/Delete/5
 		[HttpPost, ActionName("Delete")]
@@ -218,9 +250,10 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 		}
 
 		private bool QuestionExists(int id)
-        {
-            return _context.Questions.Any(e => e.QuestionId == id);
-        }
+		{
+			return _context.Questions.Any(e => e.QuestionId == id);
+		}
+
 		[HttpPost]
 		public async Task<IActionResult> ImportExcel(IFormFile file)
 		{
@@ -240,10 +273,12 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 
 					foreach (var row in rows)
 					{
+						var questionType = row.Cell(2).GetString();
+
 						var question = new Question
 						{
 							Content = row.Cell(1).GetString(),
-							QuestionType = row.Cell(2).GetString(),
+							QuestionType = questionType,
 							SkillId = row.Cell(3).GetValue<int>(),
 							DifficultyId = row.Cell(4).GetValue<int>(),
 							CreatedBy = row.Cell(5).GetValue<int>(),
@@ -251,7 +286,7 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 							QuestionOptions = new List<QuestionOption>()
 						};
 
-						// Đọc CorrectOptionIndex (cột 10), có thể là "1" hoặc "1,2,3"
+						// Đọc CorrectOptionIndex (cột 10) -> VD: "1"
 						var correctIndexesStr = row.Cell(10).GetString();
 						var correctIndexes = new List<int>();
 						if (!string.IsNullOrWhiteSpace(correctIndexesStr))
@@ -262,17 +297,34 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 								.ToList();
 						}
 
-						// option nằm ở cột 6–9
-						for (int i = 6; i <= 9; i++)
+						if (questionType == "TrueFalse")
 						{
-							if (!string.IsNullOrWhiteSpace(row.Cell(i).GetString()))
+							// Luôn ép tạo 2 option True/False
+							question.QuestionOptions = new List<QuestionOption>
 							{
-								question.QuestionOptions.Add(new QuestionOption
+								new QuestionOption { Content = "True",  IsCorrect = correctIndexes.Contains(1) },
+								new QuestionOption { Content = "False", IsCorrect = correctIndexes.Contains(2) }
+							};
+						}
+						else if (questionType == "MCQ")
+						{
+							// Option nằm ở cột 6–9
+							for (int i = 6; i <= 9; i++)
+							{
+								if (!string.IsNullOrWhiteSpace(row.Cell(i).GetString()))
 								{
-									Content = row.Cell(i).GetString(),
-									IsCorrect = correctIndexes.Contains(i - 5)
-								});
+									question.QuestionOptions.Add(new QuestionOption
+									{
+										Content = row.Cell(i).GetString(),
+										IsCorrect = correctIndexes.Contains(i - 5)
+									});
+								}
 							}
+						}
+						else if (questionType == "Text")
+						{
+							// Text question -> không có option
+							question.QuestionOptions = new List<QuestionOption>();
 						}
 
 						_context.Questions.Add(question);
@@ -285,6 +337,5 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 			TempData["Message"] = "Import successfully!";
 			return RedirectToAction(nameof(Index));
 		}
-
 	}
 }

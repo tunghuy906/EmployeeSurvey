@@ -64,6 +64,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5BbnN3ZXJzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminAnswers/Grade.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5BbnN3ZXJzXEdyYWRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminAnswers/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5BbnN3ZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -90,6 +94,30 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminAssignments/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Bc3NpZ25tZW50c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminAuditLogs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5BdWRpdExvZ3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminAuditLogs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5BdWRpdExvZ3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminAuditLogs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5BdWRpdExvZ3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminAuditLogs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5BdWRpdExvZ3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminAuditLogs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5BdWRpdExvZ3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminDepartments/AssignToDepartment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5EZXBhcnRtZW50c1xBc3NpZ25Ub0RlcGFydG1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminDepartments/Create.cshtml]
@@ -172,6 +200,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5RdWVzdGlvbnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminReports/ByLevel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5SZXBvcnRzXEJ5TGV2ZWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminReports/ByRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5SZXBvcnRzXEJ5Um9sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminReports/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5SZXBvcnRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminReports/PersonalSkill.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5SZXBvcnRzXFBlcnNvbmFsU2tpbGwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminTestAttempts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5UZXN0QXR0ZW1wdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -212,6 +256,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5UZXN0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminUserSkills/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Vc2VyU2tpbGxzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminUserSkills/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Vc2VyU2tpbGxzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminUserSkills/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Vc2VyU2tpbGxzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminUserSkills/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Vc2VyU2tpbGxzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminUserSkills/Grade.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Vc2VyU2tpbGxzXEdyYWRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminUserSkills/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Vc2VyU2tpbGxzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -234,6 +302,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Views/Feedbacks/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Views/Feedbacks/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Views/Feedbacks/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Views/Home/ChangePassword.cshtml]

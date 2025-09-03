@@ -7,7 +7,12 @@
 
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h2 class="fw-bold">Quản lý bài test</h2>
-    <a asp-action="Create" class="btn btn-primary">Thêm bài test</a>
+    <div>
+        <a asp-action="Create" class="btn btn-primary me-2">Thêm bài test</a>
+        <a asp-area="Admin" asp-controller="AdminAssignments" asp-action="AssignGroup" class="btn btn-success">
+            Phân công
+        </a>
+    </div>
 </div>
 
 <div class="card shadow-sm rounded-3">
@@ -30,7 +35,7 @@
                     <tr>
                         <td>@item.Title</td>
                         <td>@item.Description</td>
-                        <td>@item.Duration phút</td>
+                        <td>@item.Duration giây</td>
                         <td>@item.PassScore</td>
                         <td>@item.CreatedDate?.ToString("dd/MM/yyyy")</td>
                         <td>@item.CreatedByNavigation?.FullName</td>
@@ -38,9 +43,6 @@
                             <a asp-action="Edit" asp-route-id="@item.TestId" class="btn btn-warning btn-sm">Sửa</a>
                             <a asp-action="Details" asp-route-id="@item.TestId" class="btn btn-info btn-sm text-white">Xem</a>
                             <a asp-action="Delete" asp-route-id="@item.TestId" class="btn btn-danger btn-sm">Xóa</a>
-                            <a asp-area="Admin" asp-controller="AdminAssignments" asp-action="AssignGroup" asp-route-TestId="@item.TestId" class="btn btn-success btn-sm">
-                                Phân công
-                            </a>
                         </td>
                     </tr>
                 }

@@ -1,0 +1,117 @@
+﻿@{
+    ViewData["Title"] = "Báo cáo theo Role";
+    var reportRole = ViewBag.ReportByRole as IEnumerable<dynamic>;
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-primary">📊 Báo cáo theo Vai trò</h2>
+
+    <!-- 2 biểu đồ -->
+    <div class="row">
+        <!-- Biểu đồ thanh ngang -->
+        <div class="col-md-7">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    Số lượng Nhân sự theo Vai trò
+                </div>
+                <div class="card-body">
+                    <canvas id="barChartRole"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Biểu đồ tròn -->
+        <div class="col-md-5">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-success text-white">
+                    Tỷ lệ Cơ cấu Nhân sự
+                </div>
+                <div class="card-body">
+                    <canvas id="pieChartRole"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bảng thống kê -->
+    <div class="card shadow-sm">
+        <div class="card-header bg-info text-white">
+            Bảng Thống kê Chi tiết
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-hover text-center align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Vai trò</th>
+                        <th>Số lượng Nhân sự</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in reportRole)
+                    {
+                        <tr>
+                            <td>@item.RoleName</td>
+                            <td>@item.TotalUsers</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ChartJS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var labelsRole = [];
+    var dataRole = [];
+
+    @foreach (var item in reportRole)
+    {
+        <text>
+                labelsRole.push("@item.RoleName");
+                dataRole.push(@item.TotalUsers);
+        </text>
+    }
+
+    // Biểu đồ thanh ngang
+    new Chart(document.getElementById("barChartRole"), {
+        type: 'bar',
+        data: {
+            labels: labelsRole,
+            datasets: [{
+                label: "Số lượng Nhân sự",
+                data: dataRole,
+                backgroundColor: ['#4e79a7','#59a14f','#f28e2b','#e15759']
+            }]
+        },
+        options: {
+            indexAxis: 'y', // 👉 chuyển thành thanh ngang
+            responsive: true,
+            plugins: {
+                legend: { display: false }
+            },
+            scales: {
+                x: { beginAtZero: true, ticks: { stepSize: 1 } }
+            }
+        }
+    });
+
+    // Biểu đồ tròn
+    new Chart(document.getElementById("pieChartRole"), {
+        type: 'doughnut',
+        data: {
+            labels: labelsRole,
+            datasets: [{
+                data: dataRole,
+                backgroundColor: ['#4e79a7','#59a14f','#f28e2b','#e15759']
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'bottom' }
+            }
+        }
+    });
+</script>

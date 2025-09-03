@@ -1,0 +1,115 @@
+﻿@{
+    ViewData["Title"] = "Báo cáo & Thống kê";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-center text-dark">📊 Báo cáo & Thống kê</h2>
+
+    <!-- 3 box trên -->
+    <div class="row mb-4">
+        <!-- Tổng số người dùng -->
+        <div class="col-md-4 mb-3">
+            <div class="card text-center shadow-sm border-0 bg-light-blue">
+                <div class="card-body">
+                    <i class="bi bi-person-circle fs-1 text-primary"></i>
+                    <h5 class="card-title mt-2">Tổng số người dùng</h5>
+                    <h3 class="fw-bold text-primary">@ViewBag.TotalUsers</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tổng số phòng ban -->
+        <div class="col-md-4 mb-3">
+            <div class="card text-center shadow-sm border-0 bg-light-green">
+                <div class="card-body">
+                    <i class="bi bi-building fs-1 text-success"></i>
+                    <h5 class="card-title mt-2">Tổng số phòng ban</h5>
+                    <h3 class="fw-bold text-success">@ViewBag.TotalDepartments</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tổng số bài test -->
+        <div class="col-md-4 mb-3">
+            <div class="card text-center shadow-sm border-0 bg-light-orange">
+                <div class="card-body">
+                    <i class="bi bi-file-earmark-text fs-1 text-warning"></i>
+                    <h5 class="card-title mt-2">Tổng số bài test</h5>
+                    <h3 class="fw-bold text-warning">@ViewBag.TotalTests</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4 box dưới -->
+    <div class="row">
+        <!-- Báo cáo theo Vai trò -->
+        <div class="col-md-3 mb-3">
+            <a href="@Url.Action("ByRole", "AdminReports", new { area="Admin" })" class="text-decoration-none">
+                <div class="card text-center shadow-sm border-0 hover-shadow bg-white">
+                    <div class="card-body">
+                        <i class="bi bi-people-fill fs-1 text-primary"></i>
+                        <h5 class="mt-3 text-dark">Báo cáo theo Vai trò</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Báo cáo theo Cấp độ -->
+        <div class="col-md-3 mb-3">
+            <a href="@Url.Action("ByLevel", "AdminReports", new { area="Admin" })" class="text-decoration-none">
+                <div class="card text-center shadow-sm border-0 hover-shadow bg-white">
+                    <div class="card-body">
+                        <i class="bi bi-layers-fill fs-1 text-success"></i>
+                        <h5 class="mt-3 text-dark">Báo cáo theo Cấp độ</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Thống kê Năng lực Cá nhân -->
+        <div class="col-md-3 mb-3">
+            <a href="@Url.Action("PersonalSkill", "AdminReports", new { area="Admin" })" class="text-decoration-none">
+                <div class="card text-center shadow-sm border-0 hover-shadow bg-white">
+                    <div class="card-body">
+                        <i class="bi bi-bar-chart-fill fs-1 text-info"></i>
+                        <h5 class="mt-3 text-dark">Thống kê Năng lực Cá nhân</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- ✨ Chấm điểm Kỹ năng -->
+        <div class="col-md-3 mb-3">
+            <a href="@Url.Action("Grade", "AdminUserSkills", new { area="Admin" })" class="text-decoration-none">
+                <div class="card text-center shadow-sm border-0 hover-shadow bg-white">
+                    <div class="card-body">
+                        <i class="bi bi-pencil-square fs-1 text-danger"></i>
+                        <h5 class="mt-3 text-dark">Chấm điểm Kỹ năng</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- CSS riêng -->
+<style>
+    .hover-shadow:hover {
+        transform: scale(1.05);
+        transition: 0.3s;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important;
+    }
+
+    .bg-light-blue {
+        background: #eaf3ff;
+    }
+
+    .bg-light-green {
+        background: #eafff3;
+    }
+
+    .bg-light-orange {
+        background: #fff7e6;
+    }
+</style>

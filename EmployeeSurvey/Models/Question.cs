@@ -49,5 +49,7 @@ namespace EmployeeSurvey.Models
 
 		[InverseProperty("Question")]
 		public virtual ICollection<TestQuestion> TestQuestions { get; set; } = new List<TestQuestion>();
+		public bool IsAutoGradable { get; set; } // true = trắc nghiệm auto, false = tự luận cần admin chấm
+
 	}
 }

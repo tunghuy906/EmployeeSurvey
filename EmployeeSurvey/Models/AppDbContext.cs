@@ -42,6 +42,7 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<TestQuestion> TestQuestions { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
+    public virtual DbSet<UserSkills> UserSkills { get; set; }
 
 
 	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -92,7 +93,16 @@ public partial class AppDbContext : DbContext
                 .HasConstraintName("FK_Logs_Users");
         });
 
-        modelBuilder.Entity<Department>(entity =>
+		modelBuilder.Entity<Answer>()
+	        .Property(a => a.IsGraded)
+	        .HasDefaultValue(false);
+
+		modelBuilder.Entity<Answer>()
+			.Property(a => a.IsManual)
+			.HasDefaultValue(false);
+
+
+		modelBuilder.Entity<Department>(entity =>
         {
             entity.HasKey(e => e.DeptId).HasName("PK__Departme__0148818ECA7FAF49");
         });
@@ -191,7 +201,14 @@ public partial class AppDbContext : DbContext
                 .HasConstraintName("FK_TQ_Tests");
         });
 
-        modelBuilder.Entity<User>(entity =>
+		modelBuilder.Entity<Feedback>()
+	        .HasOne(f => f.Test)
+	        .WithMany(t => t.Feedbacks)
+	        .HasForeignKey(f => f.TestId)
+	        .OnDelete(DeleteBehavior.SetNull);
+
+
+		modelBuilder.Entity<User>(entity =>
         {
             entity.HasKey(e => e.UserId).HasName("PK__Users__1788CCAC840DC2D9");
 

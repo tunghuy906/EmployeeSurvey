@@ -2,50 +2,52 @@
 
 @{
     ViewData["Title"] = "Danh sách phòng ban";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Danh sách phòng ban</h1>
+<div class="content">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="fw-bold text-success">Danh sách phòng ban</h1>
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Thêm phòng ban
+        </a>
+    </div>
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">Thêm phòng ban</a>
-</p>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>DeptName</th>
-            <th>Description</th>
-            <th>Nhân viên</th>
-            <th>Thao tác</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var dept in Model)
-        {
+    <table class="table table-bordered table-hover align-middle">
+        <thead class="table-success text-center">
             <tr>
-                <td>@dept.DeptName</td>
-                <td>@dept.Description</td>
-                <td>
-                    @if (dept.Users != null && dept.Users.Any())
-                    {
-                        <span>@dept.Users.Count() nhân viên</span>
-                    }
-                    else
-                    {
-                        <span><i>Chưa có nhân viên</i></span>
-                    }
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@dept.DeptId" class="btn btn-sm btn-warning">Sửa phòng/ban</a>
-                    <a asp-action="Details" asp-route-id="@dept.DeptId" class="btn btn-sm btn-info">Xem phòng/ban</a>
-                    <a asp-action="Delete" asp-route-id="@dept.DeptId" class="btn btn-sm btn-danger">Xóa phòng/ban</a>
-
-                    <!-- Nút thêm nhân viên -->
-                    <a asp-controller="AdminDepartments" asp-action="AssignToDepartment" asp-route-deptId="@dept.DeptId" class="btn btn-sm btn-success">
-                        + Thêm nhân viên
-                    </a>
-                </td>
+                <th>Tên phòng ban</th>
+                <th>Mô tả</th>
+                <th>Nhân viên</th>
+                <th>Thao tác</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var dept in Model)
+            {
+                <tr>
+                    <td>@dept.DeptName</td>
+                    <td>@dept.Description</td>
+                    <td>
+                        @if (dept.Users != null && dept.Users.Any())
+                        {
+                            <span class="badge bg-success">@dept.Users.Count() nhân viên</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">Chưa có nhân viên</span>
+                        }
+                    </td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@dept.DeptId" class="btn btn-warning btn-sm">Sửa</a>
+                        <a asp-action="Details" asp-route-id="@dept.DeptId" class="btn btn-info btn-sm text-white">Chi tiết</a>
+                        <a asp-action="Delete" asp-route-id="@dept.DeptId" class="btn btn-danger btn-sm">Xóa</a>
+                        <a asp-controller="AdminDepartments" asp-action="AssignToDepartment" asp-route-deptId="@dept.DeptId" class="btn btn-success btn-sm">
+                            + Nhân viên
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

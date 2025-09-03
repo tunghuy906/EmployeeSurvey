@@ -1,53 +1,39 @@
 ﻿@model IEnumerable<EmployeeSurvey.Models.Feedback>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Feedbacks";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Index</h1>
+<div class="content">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="fw-bold text-success">Danh sách Feedbacks</h1>
+    </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Content)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Test)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Content)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Test.TestId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.UserId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.FeedbackId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.FeedbackId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.FeedbackId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <table class="table table-bordered table-hover align-middle">
+        <thead class="table-success text-center">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Content)</th>
+                <th>@Html.DisplayNameFor(model => model.CreatedDate)</th>
+                <th>@Html.DisplayNameFor(model => model.Test)</th>
+                <th>@Html.DisplayNameFor(model => model.User)</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Content)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CreatedDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Test.TestId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.User.UserId)</td>
+                    <td class="text-center">
+                        <a asp-action="Details" asp-route-id="@item.FeedbackId" class="btn btn-info btn-sm text-white">Chi tiết</a>
+                        <a asp-action="Delete" asp-route-id="@item.FeedbackId" class="btn btn-danger btn-sm">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

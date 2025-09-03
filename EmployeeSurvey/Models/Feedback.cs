@@ -16,9 +16,13 @@ public partial class Feedback
     public int UserId { get; set; }
 
     [Column("TestID")]
-    public int TestId { get; set; }
+    public int? TestId { get; set; }
 
-	public string CorrectTextAnswer { get; set; }
+	[NotMapped]
+	public string? CorrectTextAnswer { get; set; }
+
+	[Column("AttemptID")]
+	public int AttemptId { get; set; }
 
 	[StringLength(1000)]
     public string Content { get; set; } = null!;
@@ -33,5 +37,10 @@ public partial class Feedback
     [ForeignKey("UserId")]
     [InverseProperty("Feedbacks")]
     public virtual User User { get; set; } = null!;
+
+
+	[ForeignKey("AttemptId")]
+	[InverseProperty("Feedbacks")]
+	public virtual TestAttempt Attempt { get; set; } = null!;
 
 }

@@ -61,4 +61,7 @@ public partial class User
     [ForeignKey("UserId")]
     [InverseProperty("Users")]
     public virtual ICollection<Department> Depts { get; set; } = new List<Department>();
+	public DateTime CreatedAt { get; set; }
+	public ICollection<UserSkills> UserSkills { get; set; } = new List<UserSkills>();
+
 }

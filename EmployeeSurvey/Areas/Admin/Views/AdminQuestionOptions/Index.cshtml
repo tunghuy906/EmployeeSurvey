@@ -1,53 +1,68 @@
 ﻿@model IEnumerable<EmployeeSurvey.Models.QuestionOption>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách câu trả lời";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml"; // dùng layout admin
 }
 
-<h1>Question Options</h1>
+<h1 class="mb-4">Danh sách câu trả lời</h1>
 
 <p>
-    <a asp-action="Create">Create New</a> |
-    
+    <a asp-action="Create" asp-route-questionId="@ViewBag.QuestionId" class="btn btn-primary">
+        + Thêm câu trả lời
+    </a>
 </p>
 
-<table class="table">
-    <thead>
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Content)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsCorrect)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Question)
-            </th>
-            <th></th>
+            <th>Nội dung</th>
+            <th>Đúng/Sai</th>
+            <th>Mã câu hỏi</th>
+            <th>Thao tác</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Content</td>
+                    <td>
+                        @if (item.IsCorrect == true)
+                        {
+                            <span class="badge bg-success">Đúng</span>
+                        }
+                        else if (item.IsCorrect == false)
+                        {
+                            <span class="badge bg-danger">Sai</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">Chưa xác định</span>
+                        }
+                    </td>
+                    <td>@item.Question.QuestionId</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.OptionId" class="btn btn-sm btn-warning">Sửa</a>
+                        <a asp-action="Details" asp-route-id="@item.OptionId" class="btn btn-sm btn-info">Chi tiết</a>
+                        <a asp-action="Delete" asp-route-id="@item.OptionId" class="btn btn-sm btn-danger">Xóa</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Content)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IsCorrect)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Question.QuestionId)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.OptionId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.OptionId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.OptionId">Delete</a>
-                </td>
+                <td colspan="4" class="text-center"><i>Chưa có câu trả lời nào</i></td>
             </tr>
         }
     </tbody>
 </table>
+
 <div>
-    <a asp-area="Admin" asp-controller="AdminQuestions" asp-action="Index">Back to Questions</a>
+    <a asp-area="Admin" asp-controller="AdminQuestions" asp-action="Index" class="btn btn-secondary">
+        ← Quay lại danh sách câu hỏi
+    </a>
 </div>

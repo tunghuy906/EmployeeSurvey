@@ -1,52 +1,59 @@
 ﻿@model IEnumerable<EmployeeSurvey.Models.Question>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách câu hỏi";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Danh sách câu hỏi</h1>
+<div class="content">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="fw-bold text-success">Danh sách câu hỏi</h1>
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Tạo câu hỏi mới
+        </a>
+    </div>
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">Tạo câu hỏi mới</a>
-</p>
-<p>
-    <form asp-action="ImportExcel" enctype="multipart/form-data" method="post">
-        <div class="form-group">
-            <label>Upload Excel File</label>
+    <!-- Form import Excel -->
+    <div class="mb-4">
+        <form asp-action="ImportExcel" enctype="multipart/form-data" method="post" class="d-flex gap-2">
             <input type="file" name="file" class="form-control" />
-        </div>
-        <button type="submit" class="btn btn-success">Import</button>
-    </form>
-</p>
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.Content)</th>
-            <th>@Html.DisplayNameFor(model => model.QuestionType)</th>
-            <th>@Html.DisplayNameFor(model => model.CreatedDate)</th>
-            <th>@Html.DisplayNameFor(model => model.CreatedByNavigation)</th>
-            <th>@Html.DisplayNameFor(model => model.Difficulty)</th>
-            <th>@Html.DisplayNameFor(model => model.Skill)</th>
-            <th>Thao tác</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+            <button type="submit" class="btn btn-success">
+                <i class="bi bi-file-earmark-arrow-up"></i> Import Excel
+            </button>
+        </form>
+    </div>
+
+    <!-- Bảng danh sách câu hỏi -->
+    <table class="table table-bordered table-hover align-middle">
+        <thead class="table-success text-center">
             <tr>
-                <td>@Html.DisplayFor(modelItem => item.Content)</td>
-                <td>@Html.DisplayFor(modelItem => item.QuestionType)</td>
-                <td>@Html.DisplayFor(modelItem => item.CreatedDate)</td>
-                <td>@Html.DisplayFor(modelItem => item.CreatedByNavigation.FullName)</td>
-                <td>@Html.DisplayFor(modelItem => item.Difficulty.LevelName)</td>
-                <td>@Html.DisplayFor(modelItem => item.Skill.SkillName)</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.QuestionId" class="btn btn-warning btn-sm">Sửa</a> |
-                    <a asp-action="Details" asp-route-id="@item.QuestionId" class="btn btn-info btn-sm">Chi tiết</a> |
-                    <a asp-action="Delete" asp-route-id="@item.QuestionId" class="btn btn-danger btn-sm">Xóa</a> |
-                    <a asp-controller="AdminQuestionOptions" asp-action="Index" asp-route-questionId="@item.QuestionId" class="btn btn-success btn-sm">Câu trả lời</a>
-                </td>
+                <th>@Html.DisplayNameFor(model => model.Content)</th>
+                <th>@Html.DisplayNameFor(model => model.QuestionType)</th>
+                <th>@Html.DisplayNameFor(model => model.CreatedDate)</th>
+                <th>Người tạo</th>
+                <th>Độ khó</th>
+                <th>Kỹ năng</th>
+                <th>Thao tác</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Content)</td>
+                    <td>@Html.DisplayFor(modelItem => item.QuestionType)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CreatedDate)</td>
+                    <td>@item.CreatedByNavigation?.FullName</td>
+                    <td>@item.Difficulty?.LevelName</td>
+                    <td>@item.Skill?.SkillName</td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@item.QuestionId" class="btn btn-warning btn-sm">Sửa</a>
+                        <a asp-action="Details" asp-route-id="@item.QuestionId" class="btn btn-info btn-sm text-white">Chi tiết</a>
+                        <a asp-action="Delete" asp-route-id="@item.QuestionId" class="btn btn-danger btn-sm">Xóa</a>
+                        <a asp-controller="AdminQuestionOptions" asp-action="Index" asp-route-questionId="@item.QuestionId" class="btn btn-success btn-sm">Câu trả lời</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
