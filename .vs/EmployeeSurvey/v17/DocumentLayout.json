@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "C:\\C#_ToTrain\\EmployeeSurvey\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\views\\home\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\views\\home\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\controllers\\adminauditlogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\controllers\\adminauditlogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,16 +43,8 @@
       "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\views\\adminauditlogs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\areas\\admin\\views\\adminauditlogs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\areas\\admin\\views\\adminuserskills\\grade.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -81,10 +97,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\controllers\\mytestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\controllers\\mytestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\views\\mytests\\result.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -351,10 +363,6 @@
       "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\views\\home\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|c:\\c#_totrain\\employeesurvey\\employeesurvey\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DA2F2970-540F-468A-9719-03605FE98BCE}|EmployeeSurvey\\EmployeeSurvey.csproj|solutionrelative:employeesurvey\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -438,11 +446,138 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 0,
+              "Title": "History.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\History.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Home\\History.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\History.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Views\\Home\\History.cshtml",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAIwCQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-03T02:26:40.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-03T02:24:55.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAYwMcAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T03:36:44.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AdminAnswersController.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAnswersController.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAnswersController.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAnswersController.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAnswersController.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAgwGIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-27T02:39:18.035Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAGsAAACAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-25T02:20:37.686Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "EmployeeSurvey\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T09:58:20.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAAAAANkAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T09:56:46.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AdminReportsController.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminReportsController.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminReportsController.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminReportsController.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminReportsController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAQwEcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-30T14:50:10.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAIwDQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T03:16:14.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AdminAuditLogsController.cs",
+              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAuditLogsController.cs",
+              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAuditLogsController.cs",
+              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAuditLogsController.cs",
+              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAuditLogsController.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAUwA8AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T01:58:47.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "PersonalSkill.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminReports\\PersonalSkill.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminReports\\PersonalSkill.cshtml",
@@ -454,72 +589,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_LayoutAdmin.cshtml",
-              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ViewState": "AgIAAJ0AAAAAAAAAAAAYwMcAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-22T03:36:44.587Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DashboardController.cs",
-              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\DashboardController.cs",
-              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\DashboardController.cs",
-              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\DashboardController.cs",
-              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Controllers\\DashboardController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAIwDQAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-22T03:16:14.522Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AdminReportsController.cs",
-              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminReportsController.cs",
-              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminReportsController.cs",
-              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminReportsController.cs",
-              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminReportsController.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAQwEcAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T14:50:10.274Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdminAnswersController.cs",
-              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAnswersController.cs",
-              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAnswersController.cs",
-              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAnswersController.cs",
-              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAnswersController.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAgwGIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-27T02:39:18.035Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AdminAuditLogsController.cs",
-              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAuditLogsController.cs",
-              "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAuditLogsController.cs",
-              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAuditLogsController.cs",
-              "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAuditLogsController.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAUwA8AAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T01:58:47.425Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "AdminUserSkillsController.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminUserSkillsController.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminUserSkillsController.cs",
@@ -531,7 +601,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminUserSkills\\Delete.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminUserSkills\\Delete.cshtml",
@@ -543,7 +613,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminUserSkills\\Details.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminUserSkills\\Details.cshtml",
@@ -555,7 +625,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAuditLogs\\Index.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAuditLogs\\Index.cshtml",
@@ -563,12 +633,11 @@
               "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAuditLogs\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-03T02:08:36.852Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T02:08:36.852Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminUserSkills\\Edit.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminUserSkills\\Edit.cshtml",
@@ -580,7 +649,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "Grade.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminUserSkills\\Grade.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminUserSkills\\Grade.cshtml",
@@ -588,12 +657,11 @@
               "RelativeToolTip": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminUserSkills\\Grade.cshtml",
               "ViewState": "AgIAABkAAAAAAAAAAADwvz8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-31T09:44:40.433Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-31T09:44:40.433Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminReports\\Index.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminReports\\Index.cshtml",
@@ -605,20 +673,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "EmployeeSurvey\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFYAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-25T02:20:37.686Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminUserSkills\\Index.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminUserSkills\\Index.cshtml",
@@ -630,7 +685,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminUserSkills\\Create.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminUserSkills\\Create.cshtml",
@@ -642,7 +697,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "TestAttempt.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\TestAttempt.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\TestAttempt.cs",
@@ -654,7 +709,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\User.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\User.cs",
@@ -666,7 +721,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "UserSkills.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\UserSkills.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\UserSkills.cs",
@@ -678,7 +733,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "MytestsController.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Controllers\\MytestsController.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Controllers\\MytestsController.cs",
@@ -690,7 +745,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "AdminQuestionsController.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminQuestionsController.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminQuestionsController.cs",
@@ -702,19 +757,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "EmployeeSurvey\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "EmployeeSurvey\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAO4AAAAAAAAAAAAYwA0BAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T09:56:46.906Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "AdminTestAttemptsController.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminTestAttemptsController.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminTestAttemptsController.cs",
@@ -726,7 +769,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "Result.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Mytests\\Result.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Mytests\\Result.cshtml",
@@ -738,7 +781,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Feedbacks\\Delete.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Feedbacks\\Delete.cshtml",
@@ -750,7 +793,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Feedbacks\\Create.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Feedbacks\\Create.cshtml",
@@ -762,7 +805,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "Feedback.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\Feedback.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\Feedback.cs",
@@ -774,7 +817,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "FeedbacksController.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Controllers\\FeedbacksController.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Controllers\\FeedbacksController.cs",
@@ -786,7 +829,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Feedbacks\\Index.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Feedbacks\\Index.cshtml",
@@ -798,7 +841,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "AdminTestsController.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminTestsController.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminTestsController.cs",
@@ -810,7 +853,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Program.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Program.cs",
@@ -822,7 +865,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "Skill.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\Skill.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\Skill.cs",
@@ -834,7 +877,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\AppDbContext.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\AppDbContext.cs",
@@ -846,7 +889,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "Test.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\Test.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\Test.cs",
@@ -858,7 +901,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "ByLevel.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminReports\\ByLevel.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminReports\\ByLevel.cshtml",
@@ -870,7 +913,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "AssignGroupViewModel.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\AssignGroupViewModel.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\AssignGroupViewModel.cs",
@@ -882,7 +925,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "Question.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\Question.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\Question.cs",
@@ -894,7 +937,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 39,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
@@ -906,7 +949,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "ByRole.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminReports\\ByRole.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminReports\\ByRole.cshtml",
@@ -918,7 +961,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 40,
               "Title": "AuditLog.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\AuditLog.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\AuditLog.cs",
@@ -930,7 +973,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 43,
               "Title": "QuestionCreateViewModel.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\QuestionCreateViewModel.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\QuestionCreateViewModel.cs",
@@ -942,7 +985,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "Answer.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\Answer.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\Answer.cs",
@@ -954,7 +997,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestionOptions\\Index.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestionOptions\\Index.cshtml",
@@ -966,7 +1009,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 46,
               "Title": "QuestionOption.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\QuestionOption.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\QuestionOption.cs",
@@ -978,7 +1021,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 51,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAnswers\\Index.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAnswers\\Index.cshtml",
@@ -990,7 +1033,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 47,
               "Title": "AdminQuestionOptionsController.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminQuestionOptionsController.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminQuestionOptionsController.cs",
@@ -1002,7 +1045,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestionOptions\\Create.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestionOptions\\Create.cshtml",
@@ -1014,7 +1057,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 49,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Index.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Index.cshtml",
@@ -1026,7 +1069,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminDepartments\\Index.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminDepartments\\Index.cshtml",
@@ -1038,7 +1081,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 52,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminDepartments\\Edit.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminDepartments\\Edit.cshtml",
@@ -1050,7 +1093,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 57,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\_ViewImports.cshtml",
@@ -1062,7 +1105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 54,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Index.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Index.cshtml",
@@ -1074,7 +1117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 56,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminTests\\Index.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminTests\\Index.cshtml",
@@ -1086,7 +1129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 53,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminFeedbacks\\Index.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminFeedbacks\\Index.cshtml",
@@ -1098,7 +1141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 55,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminTestAttempts\\Index.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminTestAttempts\\Index.cshtml",
@@ -1110,7 +1153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 61,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminTests\\Create.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminTests\\Create.cshtml",
@@ -1122,7 +1165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 58,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminFeedbacks\\Create.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminFeedbacks\\Create.cshtml",
@@ -1134,7 +1177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 62,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Create.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Create.cshtml",
@@ -1146,7 +1189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 59,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminTestAttempts\\Edit.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminTestAttempts\\Edit.cshtml",
@@ -1158,7 +1201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 60,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminTestAttempts\\Create.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminTestAttempts\\Create.cshtml",
@@ -1170,7 +1213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 64,
               "Title": "AdminFeedbacksController.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminFeedbacksController.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminFeedbacksController.cs",
@@ -1182,7 +1225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 63,
               "Title": "Take.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Mytests\\Take.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Mytests\\Take.cshtml",
@@ -1194,7 +1237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 65,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminFeedbacks\\Delete.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminFeedbacks\\Delete.cshtml",
@@ -1206,7 +1249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 66,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Mytests\\Index.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Mytests\\Index.cshtml",
@@ -1218,7 +1261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 68,
               "Title": "AdminAssignmentsController.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAssignmentsController.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAssignmentsController.cs",
@@ -1230,7 +1273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 67,
               "Title": "AdminAccountsController.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAccountsController.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminAccountsController.cs",
@@ -1242,7 +1285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 70,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminDepartments\\Details.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminDepartments\\Details.cshtml",
@@ -1254,7 +1297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 71,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Delete.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Delete.cshtml",
@@ -1266,7 +1309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 69,
               "Title": "Grade.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAnswers\\Grade.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAnswers\\Grade.cshtml",
@@ -1278,7 +1321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 72,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAnswers\\Edit.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAnswers\\Edit.cshtml",
@@ -1290,7 +1333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 73,
               "Title": "AdminDepartmentsController.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminDepartmentsController.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Controllers\\AdminDepartmentsController.cs",
@@ -1302,7 +1345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 74,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\_ViewStart.cshtml",
@@ -1314,7 +1357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 75,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAnswers\\Create.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAnswers\\Create.cshtml",
@@ -1326,7 +1369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 77,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Details.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Details.cshtml",
@@ -1338,7 +1381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 76,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Edit.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Edit.cshtml",
@@ -1350,7 +1393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 78,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Create.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAccounts\\Create.cshtml",
@@ -1362,7 +1405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 81,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminDepartments\\Delete.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminDepartments\\Delete.cshtml",
@@ -1374,7 +1417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 82,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminDepartments\\Create.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminDepartments\\Create.cshtml",
@@ -1386,7 +1429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 79,
               "Title": "AssignToDepartment.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminDepartments\\AssignToDepartment.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminDepartments\\AssignToDepartment.cshtml",
@@ -1398,7 +1441,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 80,
               "Title": "AssignGroup.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAssignments\\AssignGroup.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAssignments\\AssignGroup.cshtml",
@@ -1410,7 +1453,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 83,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestionOptions\\Edit.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestionOptions\\Edit.cshtml",
@@ -1422,7 +1465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 84,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Delete.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Delete.cshtml",
@@ -1434,7 +1477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 85,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Details.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Details.cshtml",
@@ -1446,7 +1489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 86,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Edit.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestions\\Edit.cshtml",
@@ -1458,7 +1501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 87,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminTests\\Details.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminTests\\Details.cshtml",
@@ -1470,7 +1513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 90,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\Login.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Home\\Login.cshtml",
@@ -1482,7 +1525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 88,
               "Title": "ForgotPassword.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\ForgotPassword.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Home\\ForgotPassword.cshtml",
@@ -1494,7 +1537,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 89,
               "Title": "ChangePassword.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\ChangePassword.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Home\\ChangePassword.cshtml",
@@ -1506,19 +1549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "EmployeeSurvey\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-21T09:58:20.065Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 91,
               "Title": "Assignment.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\Assignment.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\Assignment.cs",
@@ -1530,7 +1561,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 93,
               "Title": "Department.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\Department.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\Department.cs",
@@ -1542,7 +1573,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 92,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAssignments\\Index.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAssignments\\Index.cshtml",
@@ -1554,7 +1585,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 94,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAssignments\\Create.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAssignments\\Create.cshtml",
@@ -1566,7 +1597,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 96,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminTests\\Delete.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminTests\\Delete.cshtml",
@@ -1578,7 +1609,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 95,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminAssignments\\Edit.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminAssignments\\Edit.cshtml",
@@ -1590,7 +1621,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 97,
               "Title": "ResetPassword.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\ResetPassword.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Home\\ResetPassword.cshtml",
@@ -1602,7 +1633,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 98,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminTestAttempts\\Details.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminTestAttempts\\Details.cshtml",
@@ -1614,7 +1645,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 99,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminTests\\Edit.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminTests\\Edit.cshtml",
@@ -1626,7 +1657,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 100,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -1638,7 +1669,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 101,
               "Title": "ForgotPasswordConfirmation.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\Home\\ForgotPasswordConfirmation.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\Home\\ForgotPasswordConfirmation.cshtml",
@@ -1650,7 +1681,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
+              "DocumentIndex": 103,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestionOptions\\Details.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestionOptions\\Details.cshtml",
@@ -1662,7 +1693,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 102,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestionOptions\\Delete.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\AdminQuestionOptions\\Delete.cshtml",
@@ -1674,7 +1705,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 104,
               "Title": "Role.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\Role.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\Role.cs",
@@ -1686,7 +1717,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 105,
               "Title": "Difficulty.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\Difficulty.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\Difficulty.cs",
@@ -1698,7 +1729,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 106,
               "Title": "DashboardViewModel.cs",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Models\\DashboardViewModel.cs",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Models\\DashboardViewModel.cs",
@@ -1710,7 +1741,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 107,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Areas\\Admin\\Views\\Shared\\Error.cshtml",
@@ -1722,7 +1753,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 106,
+              "DocumentIndex": 108,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "EmployeeSurvey\\Views\\_ViewStart.cshtml",

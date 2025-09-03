@@ -1,0 +1,50 @@
+﻿@model IEnumerable<EmployeeSurvey.Models.TestAttempt>
+
+@{
+    ViewData["Title"] = "Lịch sử làm bài";
+}
+
+<h2 class="mb-3">📜 Lịch sử các bài test đã làm</h2>
+
+@if (!Model.Any())
+{
+    <p>Bạn chưa làm bài test nào.</p>
+}
+else
+{
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Bài test</th>
+                <th>Thời gian bắt đầu</th>
+                <th>Thời gian kết thúc</th>
+                <th>Điểm đạt được</th>
+                <th>Kết quả</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                var duration = (item.StartTime != null && item.EndTime != null)
+                ? (item.EndTime.Value - item.StartTime.Value)
+                : TimeSpan.Zero;
+
+                <tr>
+                    <td>@item.Test.Title</td>
+                    <td>@item.StartTime?.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@item.EndTime?.ToString("dd/MM/yyyy HH:mm")</td>
+                    
+                    <td>
+                        <a asp-controller="MyTests"
+                           asp-action="Result"
+                           asp-route-id="@item.AttemptId"
+                           class="btn btn-sm btn-info">
+                            Xem chi tiết
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
