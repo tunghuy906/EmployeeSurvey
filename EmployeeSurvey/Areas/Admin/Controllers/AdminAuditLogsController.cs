@@ -36,11 +36,25 @@ namespace EmployeeSurvey.Areas.Admin.Controllers
 		// ================== DANH SÁCH LOG ==================
 		public async Task<IActionResult> Index()
 		{
-			var appDbContext = _context.AuditLogs
+			var logs = await _context.AuditLogs
 				.Include(a => a.User)
-				.OrderByDescending(a => a.Timestamp);
+				.OrderByDescending(a => a.Timestamp)
+				.Take(200) // ✅ chỉ lấy 200 log gần nhất
+				.ToListAsync();
 
-			return View(await appDbContext.ToListAsync());
+			return View(logs);
+		}
+		[HttpGet]
+		public async Task<IActionResult> ClearAll()
+		{
+			var allLogs = _context.AuditLogs.ToList();
+			if (allLogs.Any())
+			{
+				_context.AuditLogs.RemoveRange(allLogs);
+				await _context.SaveChangesAsync();
+			}
+
+			return RedirectToAction(nameof(Index));
 		}
 
 		// ================== CHI TIẾT LOG ==================

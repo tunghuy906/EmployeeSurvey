@@ -43,6 +43,8 @@ public partial class AppDbContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
     public virtual DbSet<UserSkills> UserSkills { get; set; }
+	public DbSet<SystemConfig> SystemConfigs { get; set; }
+
 
 
 	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

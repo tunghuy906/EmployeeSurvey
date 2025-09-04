@@ -1281,6 +1281,10 @@
       "PackagePath": "staticwebassets\\AdminAsset\\scss\\material-dashboard\\variables\\_virtual-reality.scss"
     },
     {
+      "Id": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\wwwroot\\Images\\604da914-d788-4f97-a927-170888fb502d.png",
+      "PackagePath": "staticwebassets\\Images\\604da914-d788-4f97-a927-170888fb502d.png"
+    },
+    {
       "Id": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

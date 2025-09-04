@@ -216,6 +216,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5SZXBvcnRzXFBlcnNvbmFsU2tpbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminSystemConfigs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TeXN0ZW1Db25maWdzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminSystemConfigs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TeXN0ZW1Db25maWdzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminSystemConfigs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TeXN0ZW1Db25maWdzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminSystemConfigs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TeXN0ZW1Db25maWdzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminSystemConfigs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5TeXN0ZW1Db25maWdzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Areas/Admin/Views/AdminTestAttempts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5UZXN0QXR0ZW1wdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -318,6 +338,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Views/Home/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Views/Home/EditProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0UHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/C\#_ToTrain/EmployeeSurvey/EmployeeSurvey/Views/Home/ForgotPassword.cshtml]

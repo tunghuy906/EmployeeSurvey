@@ -103,13 +103,16 @@ namespace EmployeeSurvey.Controllers
 
 			// Kết thúc attempt
 			attempt.EndTime = DateTime.Now;
-			attempt.Status = "Submitted"; // ✅ để khớp với Index view
-			if (timeSpent > 0)
-			{
-				var start = attempt.StartTime ?? DateTime.Now;
-				attempt.EndTime = start.AddSeconds(timeSpent);
-			}
+			attempt.Status = "Submitted";
 
+			if (attempt.StartTime != null && timeSpent > 0)
+			{
+				attempt.EndTime = attempt.StartTime.Value.AddSeconds(timeSpent);
+			}
+			else
+			{
+				attempt.EndTime = DateTime.Now; // fallback
+			}
 			int correct = 0;
 
 			// chỉ tính câu hỏi auto-chấm

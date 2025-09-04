@@ -1,0 +1,40 @@
+﻿@model EmployeeSurvey.Models.User
+@{
+    ViewData["Title"] = "Chỉnh sửa hồ sơ";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">✏️ Chỉnh sửa hồ sơ</h2>
+
+    <form asp-action="EditProfile" method="post">
+        <input type="hidden" asp-for="UserId" />
+
+        <div class="mb-3">
+            <label class="form-label">Họ tên</label>
+            <input asp-for="FullName" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Vai trò</label>
+            <input value="@Model.Role?.RoleName" class="form-control" readonly />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Level</label>
+            <input value="@Model.Level" class="form-control" readonly />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Phòng ban</label>
+            <input value="@ViewBag.Departments" class="form-control" readonly />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+        <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+    </form>
+</div>

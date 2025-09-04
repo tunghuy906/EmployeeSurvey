@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "i1DgJIWCR35k8e6Ghk3ucf3sUCi/ULrx4p9aqklbFlA=",
+  "Hash": "ufjSQi347c10JOYJ8jcUvhVxIFbetXJhpwEnyoRplVA=",
   "Source": "EmployeeSurvey",
   "BasePath": "_content/EmployeeSurvey",
   "Mode": "Default",
@@ -6798,6 +6798,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\wwwroot\\Images\\604da914-d788-4f97-a927-170888fb502d.png",
+      "SourceId": "EmployeeSurvey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\wwwroot\\",
+      "BasePath": "_content/EmployeeSurvey",
+      "RelativePath": "Images/604da914-d788-4f97-a927-170888fb502d#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5646xzgkhb",
+      "Integrity": "Y3jOC0cefM62vcAmzxuzuM2V6VZiainJcLn+4UQL8IU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\604da914-d788-4f97-a927-170888fb502d.png"
     },
     {
       "Identity": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\wwwroot\\js\\site.js",
@@ -38050,6 +38071,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "Images/604da914-d788-4f97-a927-170888fb502d.5646xzgkhb.png",
+      "AssetFile": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\wwwroot\\Images\\604da914-d788-4f97-a927-170888fb502d.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46793"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y3jOC0cefM62vcAmzxuzuM2V6VZiainJcLn+4UQL8IU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 04:30:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5646xzgkhb"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/604da914-d788-4f97-a927-170888fb502d.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y3jOC0cefM62vcAmzxuzuM2V6VZiainJcLn+4UQL8IU="
+        }
+      ]
+    },
+    {
+      "Route": "Images/604da914-d788-4f97-a927-170888fb502d.png",
+      "AssetFile": "C:\\C#_ToTrain\\EmployeeSurvey\\EmployeeSurvey\\wwwroot\\Images\\604da914-d788-4f97-a927-170888fb502d.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46793"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y3jOC0cefM62vcAmzxuzuM2V6VZiainJcLn+4UQL8IU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 04 Sep 2025 04:30:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y3jOC0cefM62vcAmzxuzuM2V6VZiainJcLn+4UQL8IU="
         }
       ]
     },

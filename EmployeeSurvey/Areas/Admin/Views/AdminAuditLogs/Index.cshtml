@@ -1,40 +1,58 @@
 ﻿@model IEnumerable<EmployeeSurvey.Models.AuditLog>
-
 @{
     ViewData["Title"] = "Lịch sử hoạt động";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2 class="mb-3 text-primary">📜 Lịch sử hoạt động</h2>
+<div class="card shadow-sm p-3">
+    <h2 class="text-success fw-bold mb-3">📜 Lịch sử hoạt động</h2>
 
-<table class="table table-striped table-hover shadow-sm">
-    <thead class="table-dark">
-        <tr>
-            <th>Người dùng</th>
-            <th>Hành động</th>
-            <th>Chi tiết</th>
-            <th>Thời gian</th>
-            <th class="text-center">Thao tác</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+    <div class="text-end mb-3">
+        <a asp-action="ClearAll"
+           class="btn btn-danger"
+           onclick="return confirm('Bạn có chắc chắn muốn xóa toàn bộ lịch sử không?');">
+            <i class="bi bi-trash"></i> Xóa toàn bộ
+        </a>
+    </div>
+
+    <table class="table table-bordered table-hover">
+        <thead class="table-success">
             <tr>
-                <td>
-                    @(item.User != null ? item.User.FullName ?? item.User.FullName : "N/A")
-                </td>
-                <td>@item.Action</td>
-                <td>@item.Detail</td>
-                <td>@(item.Timestamp?.ToString("dd/MM/yyyy HH:mm:ss") ?? "N/A")</td>
-                <td class="text-center">
-                    <a asp-action="Details" asp-route-id="@item.LogId" class="btn btn-sm btn-info text-white">
-                        <i class="bi bi-eye"></i> Xem
-                    </a>
-                    <a asp-action="Delete" asp-route-id="@item.LogId" class="btn btn-sm btn-danger">
-                        <i class="bi bi-trash"></i> Xóa
-                    </a>
-                </td>
+                <th>Thời gian</th>
+                <th>Người dùng</th>
+                <th>Hành động</th>
+                <th>Chi tiết</th>
+                <th>Thao tác</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                var i = 0;
+                foreach (var log in Model)
+                {
+                    <tr class="@(i++ % 2 == 0 ? "" : "table-light")">
+                        <td>@log.Timestamp?.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                        <td>@log.User?.FullName</td>
+                        <td>@log.Action</td>
+                        <td>@log.Detail</td>
+                        <td>
+                            <form asp-action="Delete" asp-route-id="@log.LogId" method="post"
+                                  onsubmit="return confirm('Bạn có chắc chắn muốn xóa log này?');">
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i> Xóa
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" class="text-center text-muted">Chưa có hoạt động nào được ghi nhận.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

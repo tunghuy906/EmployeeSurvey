@@ -37,25 +37,34 @@ public class HomeController : Controller
 
 		if (user != null)
 		{
+			// Lưu session
 			HttpContext.Session.SetInt32("UserId", user.UserId);
 			HttpContext.Session.SetString("FullName", user.FullName ?? "");
 			HttpContext.Session.SetString("Role", user.Role?.RoleName ?? "");
+
+			// ✅ Ghi lịch sử đăng nhập
+			var log = new AuditLog
+			{
+				UserId = user.UserId,
+				Action = "Đăng nhập",
+				Detail = $"Người dùng '{user.FullName}' (Email: {user.Email}, Role: {user.Role?.RoleName}) đã đăng nhập",
+				Timestamp = DateTime.Now
+			};
+			_context.AuditLogs.Add(log);
+			await _context.SaveChangesAsync();
 
 			// 👉 Kiểm tra phân quyền
 			if (user.Role?.RoleName == "Admin" ||
 				user.Role?.RoleName == "HR" ||
 				user.Role?.RoleName == "Manager")
 			{
-				// Vào trang Admin (ví dụ: /Admin/Dashboard)
 				return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
 			}
 			else
 			{
-				// Nhân viên bình thường vào Home
 				return RedirectToAction("Index", "Home");
 			}
 		}
-
 
 		ViewBag.Error = "Sai email hoặc mật khẩu.";
 		return View();
@@ -265,5 +274,51 @@ public class HomeController : Controller
 		return RedirectToAction("Index"); // quay lại trang cá nhân
 	}
 
+	[HttpGet]
+	public async Task<IActionResult> EditProfile()
+	{
+		var userId = HttpContext.Session.GetInt32("UserId");
+		if (userId == null) return RedirectToAction("Login");
+
+		var user = await _context.Users
+			.Include(u => u.Role)
+			.FirstOrDefaultAsync(u => u.UserId == userId);
+
+		if (user == null) return NotFound();
+
+		// Lấy tên phòng ban của user bằng join
+		var departments = await _context.Departments
+			.FromSqlRaw(@"
+            SELECT d.* 
+            FROM Departments d
+            INNER JOIN User_Department ud ON d.DeptId = ud.DeptId
+            WHERE ud.UserId = {0}", userId)
+			.Select(d => d.DeptName)
+			.ToListAsync();
+
+		ViewBag.Departments = string.Join(", ", departments);
+
+		return View(user);
+	}
+
+	[HttpPost]
+	[ValidateAntiForgeryToken]
+	public async Task<IActionResult> EditProfile(User model)
+	{
+		var userId = HttpContext.Session.GetInt32("UserId");
+		if (userId == null) return RedirectToAction("Login");
+
+		var user = await _context.Users.FirstOrDefaultAsync(u => u.UserId == userId);
+		if (user == null) return NotFound();
+
+		// ✅ Chỉ cho sửa FullName và Email
+		user.FullName = model.FullName;
+		user.Email = model.Email;
+
+		await _context.SaveChangesAsync();
+
+		TempData["Success"] = "Cập nhật hồ sơ thành công!";
+		return RedirectToAction("Index");
+	}
 
 }

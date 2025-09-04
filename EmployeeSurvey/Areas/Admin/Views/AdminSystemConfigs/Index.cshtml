@@ -1,0 +1,50 @@
+﻿@model IEnumerable<EmployeeSurvey.Models.SystemConfig>
+
+@{
+    ViewData["Title"] = "Cấu hình hệ thống";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card shadow-sm p-4">
+    <h2 class="fw-bold text-success mb-3">⚙️ Cấu hình hệ thống</h2>
+    <table class="table table-bordered table-hover">
+        <thead class="table-success">
+            <tr>
+                <th class="text-center">Tên hệ thống</th>
+                <th class="text-center">Logo</th>
+                <th class="text-center">Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="align-middle">@item.SystemName</td>
+                        <td class="align-middle text-center">
+                            @if (!string.IsNullOrEmpty(item.LogoPath))
+                            {
+                                <img src="@item.LogoPath" alt="Logo" style="max-height:50px;" class="rounded shadow-sm" />
+                            }
+                            else
+                            {
+                                <span class="text-muted">Chưa có</span>
+                            }
+                        </td>
+                        <td class="align-middle text-center">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Sửa</a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info text-white">Chi tiết</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3" class="text-center text-muted">Chưa có cấu hình nào</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

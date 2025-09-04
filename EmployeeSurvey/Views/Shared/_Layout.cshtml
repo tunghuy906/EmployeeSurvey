@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@inject EmployeeSurvey.Models.AppDbContext _context
+
+@{
+    var config = _context.SystemConfigs.OrderByDescending(c => c.Id).FirstOrDefault();
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -20,7 +26,7 @@
         }
 
         main {
-            flex: 1; /* phần main sẽ giãn ra chiếm hết khoảng trống */
+            flex: 1;
         }
 
         /* ===== NAVBAR ===== */
@@ -76,40 +82,67 @@
             .dropdown-item:hover {
                 background-color: rgba(76, 175, 80, 0.1);
             }
+
+        .user-menu .dropdown-caret {
+            font-size: 1.2rem;
+            margin-left: 4px;
+        }
     </style>
 </head>
 <body>
     <!-- ===== HEADER ===== -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
+                <!-- Logo + Tên hệ thống -->
                 <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/Images/Logo.png" alt="Logo" width="40" height="40" class="me-2" />
-                    <span>Phần mềm khảo sát nhân viên</span>
-                </a>
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">💼 EmployeeSurvey</a>
+                    @if (config != null)
+                    {
+                        if (!string.IsNullOrEmpty(config.LogoPath))
+                        {
+                            <img src="@config.LogoPath" alt="Logo" width="50" height="50" class="me-2" />
+                        }
+                        else
+                        {
+                            <img src="~/Images/default-logo.png" alt="Logo" width="50" height="50" class="me-2" />
+                        }
 
+                        <span>@config.SystemName</span>
+                    }
+                    else
+                    {
+                        <img src="~/Images/default-logo.png" alt="Logo" width="50" height="50" class="me-2" />
+                        <span>Phần mềm khảo sát nhân viên</span>
+                    }
+                </a>
+
+                <!-- Menu -->
                 <div class="collapse navbar-collapse" id="mainNavbar">
                     <ul class="navbar-nav ms-auto align-items-center">
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">🏠 Trang chủ</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="MyTests" asp-action="Index">📝 Bài test của tôi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="History">📜 Lịch sử làm bài</a>
+                        </li>
 
                         <!-- User Dropdown -->
                         <li class="nav-item dropdown user-menu">
-                            <a class="dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span>@User.Identity.Name</span>
+                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown"
+                               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="me-2">@User.Identity.Name</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                                 <li>
-                                    <a class="dropdown-item" asp-controller="MyTests" asp-action="Index">📝 Bài test của tôi</a>
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="EditProfile">✏️ Chỉnh sửa hồ sơ</a>
                                 </li>
-                                <li> 
-                                     <a class="dropdown-item" asp-controller="Home" asp-action="History">📜 Lịch sử làm bài</a> 
-                                </li> 
                                 <li>
-                                    <hr class="dropdown-divider" />
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="ChangePassword">🔑 Đổi mật khẩu</a>
                                 </li>
+                                <li><hr class="dropdown-divider" /></li>
                                 <li>
                                     <a class="dropdown-item text-danger fw-bold" asp-controller="Home" asp-action="Logout">🚪 Đăng xuất</a>
                                 </li>
@@ -136,19 +169,10 @@
             </a>
         </p>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-    @inject EmployeeSurvey.Models.AppDbContext _context
-
-    @{
-        var username = User.Identity.Name; // lấy username đang login
-        var displayName = _context.Users
-        .Where(u => u.FullName == username) // hoặc Email == username tùy cậu
-        .Select(u => u.FullName)           // cột FullName trong bảng Users
-        .FirstOrDefault() ?? username;     // fallback nếu null
-    }
-
 </body>
 </html>

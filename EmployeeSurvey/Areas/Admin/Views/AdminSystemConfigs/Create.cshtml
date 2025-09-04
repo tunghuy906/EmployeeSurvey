@@ -1,0 +1,29 @@
+﻿@model EmployeeSurvey.Models.SystemConfig
+
+@{
+    ViewData["Title"] = "Thêm cấu hình hệ thống";
+}
+
+<div class="card shadow-sm p-4">
+    <h2 class="text-primary mb-3">➕ Thêm cấu hình hệ thống</h2>
+
+    <form asp-action="Create" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="mb-3">
+            <label asp-for="SystemName" class="form-label fw-bold">Tên hệ thống</label>
+            <input asp-for="SystemName" class="form-control" placeholder="Nhập tên hệ thống..." />
+            <span asp-validation-for="SystemName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Logo</label>
+            <input type="file" name="logoFile" class="form-control" accept=".jpg,.jpeg,.png" />
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <a asp-action="Index" class="btn btn-secondary">⬅ Quay lại</a>
+            <button type="submit" class="btn btn-success">💾 Lưu</button>
+        </div>
+    </form>
+</div>

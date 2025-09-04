@@ -1,0 +1,42 @@
+﻿@model EmployeeSurvey.Models.SystemConfig
+
+@{
+    ViewData["Title"] = "Sửa cấu hình hệ thống";
+}
+
+<div class="card shadow-sm p-4">
+    <h2 class="text-warning mb-3">✏️ Sửa cấu hình hệ thống</h2>
+
+    <form asp-action="Edit" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="mb-3">
+            <label asp-for="SystemName" class="form-label fw-bold">Tên hệ thống</label>
+            <input asp-for="SystemName" class="form-control" />
+            <span asp-validation-for="SystemName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Logo hiện tại</label>
+            @if (!string.IsNullOrEmpty(Model.LogoPath))
+            {
+                <div class="mb-2">
+                    <img src="@Model.LogoPath" alt="Logo" style="max-height:80px;" class="border rounded p-1" />
+                </div>
+            }
+            else
+            {
+                <div class="text-muted">Chưa có logo</div>
+            }
+            <input type="file" name="logoFile" class="form-control" accept=".jpg,.jpeg,.png" />
+            <small class="text-muted">Chọn file mới nếu muốn thay logo</small>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <a asp-action="Index" class="btn btn-secondary">⬅ Quay lại</a>
+            <button type="submit" class="btn btn-primary">💾 Cập nhật</button>
+        </div>
+    </form>
+</div>

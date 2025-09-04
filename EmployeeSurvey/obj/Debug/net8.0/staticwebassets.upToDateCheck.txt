@@ -319,6 +319,7 @@ wwwroot\AdminAsset\scss\material-dashboard\variables\_utilities-extend.scss
 wwwroot\AdminAsset\scss\material-dashboard\variables\_virtual-reality.scss
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\Images\604da914-d788-4f97-a927-170888fb502d.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
